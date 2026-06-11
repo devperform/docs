@@ -1,0 +1,64 @@
+---
+title: Metrics Reference
+description: What each metric means and how it's calculated.
+---
+
+All metrics are computed from GitHub pull request data for the selected date range. A PR is included in a period if it was **merged** (or closed) within that window.
+
+## Cycle Time
+
+**Median hours from PR open to merge.**
+
+Cycle time measures how long work takes to ship once a PR is opened. A high cycle time usually indicates PRs are sitting in review queues or being blocked by feedback loops.
+
+Displayed as hours (`4.2h`) or days (`1.3d`) depending on magnitude.
+
+## Time to First Review
+
+**Median hours from PR open to the first review event.**
+
+This isolates the "waiting for reviewer" portion of cycle time. If cycle time is high but time to first review is low, the bottleneck is in the review-to-merge phase (revisions, approvals). If time to first review is high, reviewers aren't picking up work fast enough.
+
+## Merge Rate
+
+**Merged PRs ÷ total closed PRs.**
+
+A merge rate below ~90% is worth investigating — it may mean PRs are being abandoned, superseded, or failing checks frequently. Displayed as a percentage.
+
+## PRs Closed
+
+Total number of PRs closed (merged or not) by the engineer in the period. Used as a proxy for output volume, not as a target.
+
+## PRs Reviewed
+
+Number of PRs the engineer participated in as a reviewer. Measures cross-team contribution and knowledge-sharing.
+
+## PR Comments
+
+Total review comments left by the engineer. Includes both general comments and inline code comments.
+
+## Change Suggestions
+
+Review comments marked as "request changes" or containing explicit change requests. A high ratio of suggestions to comments may indicate the engineer is thorough but code is frequently needing revision.
+
+## Lines Changed
+
+Sum of additions + deletions across all merged PRs. Treat this as context for PR size, not a productivity measure.
+
+## PR Size Distribution
+
+PRs are bucketed by lines changed:
+
+| Size | Lines changed |
+|------|--------------|
+| XS   | ≤ 10         |
+| S    | 11–100       |
+| M    | 101–500      |
+| L    | 501–1000     |
+| XL   | > 1000       |
+
+Smaller PRs generally get reviewed faster and have lower cycle times. The distribution chart shows each engineer's PR size habits over the period.
+
+## Team averages
+
+Summary cards at the top of the dashboard show team averages (for time-based metrics) or team totals (for count metrics) across all visible engineers. Applying a team filter or date range change updates these in real time.

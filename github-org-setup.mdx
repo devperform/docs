@@ -1,0 +1,43 @@
+---
+title: GitHub Org Setup
+description: How to authorize DevPerform to access your GitHub organization's repositories.
+---
+
+GitHub requires org admins to explicitly approve third-party OAuth apps before they can access private org repos. This is a one-time step per organization.
+
+## Why this is needed
+
+When you sign in with GitHub, DevPerform receives an OAuth token scoped to your personal account. That token can read your public repos immediately, but **private repos inside a GitHub org are blocked by default** until an org admin grants access.
+
+## Option A — Approve during sign-in (easiest)
+
+When you click **Sign in with GitHub** and GitHub shows the authorization screen, you'll see a section listing your organizations. Click **Grant** next to the org you want to connect.
+
+If you're not an org admin, you can click **Request** instead — this sends an approval request to your org admin.
+
+<Note>
+  If you skip this step, you can come back and grant access later from your GitHub settings.
+</Note>
+
+## Option B — Approve from GitHub org settings
+
+If you already signed in without granting org access:
+
+1. Go to **GitHub → Settings → Applications → Authorized OAuth Apps**
+2. Find **DevPerform** in the list and click it
+3. Under **Organization access**, click **Grant** next to your org
+
+Or as an org admin:
+
+1. Go to your **GitHub org → Settings → Third-party Access → OAuth app policy**
+2. Find **DevPerform** and click **Grant access**
+
+## Verifying access
+
+Once access is granted, go back to DevPerform Admin and add a repo from that org. If it loads metrics without an error, the token has the right access.
+
+If you see a GitHub API error about resource not accessible, the org authorization step hasn't completed yet.
+
+## Private vs public repos
+
+Public repos in your org do not require org approval — they're accessible with any GitHub token. Only private repos require the org approval step above.

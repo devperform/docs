@@ -1,0 +1,36 @@
+---
+title: Teams
+description: How to structure your engineering org in DevPerform.
+---
+
+Teams let you group engineers so you can filter the dashboard to a specific team and see aggregated metrics for that group.
+
+## Hierarchy
+
+DevPerform supports up to **3 levels** of team nesting:
+
+```
+Engineering          ← level 1
+├── Platform         ← level 2
+└── Product          ← level 2
+    ├── Frontend     ← level 3
+    └── Backend      ← level 3
+```
+
+A team at any level can contain engineers. There's no requirement to use all three levels — many orgs just use one flat list.
+
+## Creating teams
+
+Go to **Admin → Teams** and click **Add Team**. You can optionally select a parent team to nest it under an existing one.
+
+Teams can be renamed at any time. Deleting a team requires its child teams to be removed first.
+
+## Assigning engineers to teams
+
+When adding or editing an engineer in **Admin → Engineer Roster**, you can assign them to a team from a dropdown. An engineer belongs to exactly one team (or none).
+
+## Filtering by team
+
+The **Team** dropdown in the dashboard header filters the entire page — summary cards, the per-engineer table, and all charts — to engineers in the selected team and any of its sub-teams.
+
+For example, selecting "Product" in the example above would show engineers from Product, Frontend, and Backend combined.

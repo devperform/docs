@@ -1,0 +1,49 @@
+---
+title: Quickstart
+description: Go from zero to a live dashboard in about 10 minutes.
+---
+
+## Step 1 — Sign in with GitHub
+
+Go to [devperform.io](https://devperform.io) and click **Sign in with GitHub**. You'll be redirected to GitHub to authorize the DevPerform OAuth app.
+
+When prompted, make sure to grant access to the GitHub organization whose repos you want to track. See [GitHub Org Setup](/github-org-setup) for details on this step.
+
+## Step 2 — Claim admin
+
+The first person to sign in needs to claim the admin role. After signing in you'll see a prompt on the dashboard — click **Claim Admin**. This only works once; subsequent users become regular members.
+
+If you accidentally skip this step, sign out and sign back in — the prompt will reappear until an admin exists.
+
+## Step 3 — Add repos
+
+Go to **Admin** in the sidebar and add the GitHub repos you want to track. Use the format `org/repo`, for example `acme/backend`.
+
+You can add multiple repos. All of them are queried together when computing team metrics.
+
+## Step 4 — Add engineers
+
+Still in the Admin panel, add your engineers under **Engineer Roster**. Each engineer needs:
+
+- A display name
+- At least one GitHub username (handle)
+
+Engineers can have multiple handles if they use different accounts for personal and work contributions. Handles are how DevPerform links GitHub PR activity back to a person on your roster.
+
+## Step 5 — Organize into teams (optional)
+
+Under **Teams** in Admin, you can create a team hierarchy up to 3 levels deep — for example:
+
+```
+Engineering
+├── Platform
+└── Product
+    ├── Frontend
+    └── Backend
+```
+
+Assign each engineer to a team. The dashboard team filter lets you scope metrics to a single team and its sub-teams.
+
+## Step 6 — View the dashboard
+
+Click **Dashboard** in the sidebar. The default view shows the last 30 days across your whole roster. Use the date picker to adjust the range and the team dropdown to filter by team.

@@ -1,0 +1,49 @@
+---
+title: Team Dashboard
+description: Understanding the team-level metrics view.
+---
+
+The Team Dashboard is the main view in DevPerform. It shows aggregated and per-engineer metrics for your entire roster (or a filtered team) over a selected date range.
+
+## Summary cards
+
+The five cards at the top give a quick snapshot of the period:
+
+- **PRs Closed** — total PRs closed across all visible engineers
+- **Avg Cycle Time** — median cycle time averaged across engineers
+- **Review Turnaround** — median time-to-first-review averaged across engineers
+- **PRs Reviewed** — total review participation
+- **Avg Merge Rate** — average merge rate across engineers
+
+These update instantly when you change the date range or team filter.
+
+## Per-engineer table
+
+The table below the summary cards breaks down every metric by engineer. Click any column header to sort. Click any engineer row to drill into their [individual view](/dashboard/engineer-view).
+
+Use the search box to filter the table by name without changing the summary cards.
+
+## Charts
+
+Four charts visualize the team breakdown:
+
+- **PRs Closed vs Reviewed** — who's authoring vs reviewing
+- **Cycle Time & First Review** — time-based comparison across engineers
+- **Lines Changed** — output volume by engineer
+- **PR Size Distribution** — stacked bar showing each engineer's size habits
+
+Charts always reflect the team filter and date range, same as the summary cards.
+
+## Badges
+
+Standout performers in a period earn badges next to their name:
+
+| Badge | Meaning |
+|-------|---------|
+| ⚡ Speed Demon | Fastest cycle time on the team |
+| 🔍 Thorough Reviewer | Most review comments |
+| 🚀 High Output | Most PRs closed |
+| 🎯 Sharp Shooter | Highest merge rate |
+| 🤝 Team Player | Most PRs reviewed |
+
+Badges are relative — they go to the top engineer in each category for the current date range. They're meant as fun recognition, not rankings.

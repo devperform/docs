@@ -1,0 +1,37 @@
+---
+title: Filters & Date Range
+description: How to scope the dashboard to what you care about.
+---
+
+## Date range
+
+The date picker in the top-right of the dashboard controls the window for all metrics. You can:
+
+- Pick preset ranges: Last 7 days, Last 30 days, Last 90 days
+- Enter a custom start and end date
+
+The range is **inclusive** on both ends — PRs merged on the start date and end date are both included. Today's date is always included in the "last N days" presets.
+
+## Team filter
+
+The team dropdown to the left of the date picker scopes the dashboard to a specific team. Selecting a team includes:
+
+- Engineers directly in that team
+- Engineers in any sub-team (descendants at all levels)
+
+Selecting **All Teams** (the default) shows your full roster.
+
+The team filter affects summary cards, the per-engineer table, and all charts simultaneously.
+
+## Name search
+
+The search box inside the per-engineer table filters the visible rows by engineer name. This is a local filter — it doesn't affect the summary cards, which always reflect the full team filter and date range.
+
+## Combining filters
+
+You can combine the team filter, date range, and name search freely. A common workflow:
+
+1. Set a monthly date range
+2. Filter to a specific team
+3. Use the table sort to find outliers
+4. Click through to the engineer view for context
