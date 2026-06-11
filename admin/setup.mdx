@@ -1,0 +1,44 @@
+---
+title: Admin Setup
+description: Configuring repos, engineers, teams, and org settings from the Admin panel.
+---
+
+The Admin panel is accessible to the first user who claims the admin role. It's where you configure everything DevPerform needs to pull data and display your team.
+
+## Org settings
+
+Under **Admin → Org Settings** you can:
+
+- **Rename your organization** — sets the display name shown across the app
+- **Burnout threshold** — the number of open PRs that triggers a warning badge in the dashboard. Default is 5. Engineers with more open PRs than this threshold will show a warning indicator in the team table.
+
+## Repos
+
+Add the GitHub repos you want DevPerform to analyze. Use the format `owner/repo`, for example `acme/backend`.
+
+You can add as many repos as you like — all of them are queried together when computing team metrics for a given date range.
+
+To remove a repo, click the trash icon next to it. This only removes it from DevPerform tracking; nothing changes in GitHub.
+
+## Engineer roster
+
+Add your engineers with a display name and at least one GitHub handle. The handle is how DevPerform connects GitHub PR activity to a person on your roster.
+
+See [Engineer Roster](/concepts/engineers) for details on multiple handles and deactivation.
+
+## Teams
+
+Create a team hierarchy to enable team filtering on the dashboard. Teams are optional — if you skip this step, all engineers appear together.
+
+See [Teams](/concepts/teams) for details on hierarchy and assignment.
+
+## Permissions
+
+Only one admin role exists per organization. The admin can:
+
+- Add and remove repos
+- Add, edit, and deactivate engineers
+- Create and delete teams
+- Update org settings
+
+Regular users (non-admins) can view the dashboard but cannot access the Admin panel.

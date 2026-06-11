@@ -45,6 +45,12 @@
         "dashboard/engineer-view",
         "dashboard/filters"
       ]
+    },
+    {
+      "group": "Administration",
+      "pages": [
+        "admin/setup"
+      ]
     }
   ],
   "footerSocials": {
