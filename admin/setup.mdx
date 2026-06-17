@@ -3,42 +3,30 @@ title: Admin Setup
 description: Configuring repos, engineers, teams, and org settings from the Admin panel.
 ---
 
-The Admin panel is accessible to the first user who claims the admin role. It's where you configure everything DevPerform needs to pull data and display your team.
+The Admin panel is accessible to the user who claims the admin role. It's where you configure everything DevPerform needs to ingest data and display your team.
 
 ## Org settings
 
-Under **Admin → Org Settings** you can:
+Under **Admin → Org Settings** you can configure:
 
-- **Rename your organization** — sets the display name shown across the app
-- **Burnout threshold** — the number of open PRs that triggers a warning badge in the dashboard. Default is 5. Engineers with more open PRs than this threshold will show a warning indicator in the team table.
+- **Organization name** — the display name shown across the app.
+- **Burnout threshold** — the open-PR count that triggers the protective 🔥 overload flag in the team table. Default is **5**.
+- **Deploy detection mode** — how [DORA](/metrics/dora) detects deploys: **merges** to the default branch (default, zero-config) or successful runs of a named GitHub Actions **workflow**. In actions mode, set the workflow name.
+- **Incident label** — the GitHub issue label DevPerform treats as an incident, used for DORA change-failure-rate and time-to-restore.
+- **Survey anonymity threshold** — the minimum responses before [survey results](/surveys/results) are revealed. Default is **4**.
 
 ## Repos
 
-Add the GitHub repos you want DevPerform to analyze. Use the format `owner/repo`, for example `acme/backend`.
-
-You can add as many repos as you like — all of them are queried together when computing team metrics for a given date range.
-
-To remove a repo, click the trash icon next to it. This only removes it from DevPerform tracking; nothing changes in GitHub.
+Add repos as `owner/repo` (e.g. `acme/backend`). All tracked repos are analyzed together for a given date range. Removing a repo only stops DevPerform tracking it — nothing changes in GitHub. Adding a repo kicks off an immediate background sync.
 
 ## Engineer roster
 
-Add your engineers with a display name and at least one GitHub handle. The handle is how DevPerform connects GitHub PR activity to a person on your roster.
-
-See [Engineer Roster](/concepts/engineers) for details on multiple handles and deactivation.
+Add engineers with a name and at least one GitHub handle, or **import your whole GitHub org at once** — see [Importing your GitHub org](/admin/import-members). For surveys, also map each engineer's **work email**. See [Engineer Roster](/concepts/engineers) for multiple handles and deactivation.
 
 ## Teams
 
-Create a team hierarchy to enable team filtering on the dashboard. Teams are optional — if you skip this step, all engineers appear together.
-
-See [Teams](/concepts/teams) for details on hierarchy and assignment.
+Create a nested team hierarchy to enable team filtering. Teams are optional — skip it and all engineers appear together. See [Teams](/concepts/teams).
 
 ## Permissions
 
-Only one admin role exists per organization. The admin can:
-
-- Add and remove repos
-- Add, edit, and deactivate engineers
-- Create and delete teams
-- Update org settings
-
-Regular users (non-admins) can view the dashboard but cannot access the Admin panel.
+The admin can add/remove repos, manage engineers and handles, manage teams, and update org settings. Regular (non-admin) users can view dashboards but not the Admin panel.

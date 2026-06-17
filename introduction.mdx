@@ -1,31 +1,42 @@
 ---
 title: Introduction
-description: Engineering performance analytics built for teams that care about flow, not surveillance.
+description: Engineering intelligence built for teams that care about flow and health, not surveillance.
 ---
 
-DevPerform connects to your GitHub organization and surfaces the metrics that matter for engineering teams: how long PRs sit before review, how often work ships, and where the bottlenecks are.
+DevPerform connects to your GitHub organization and turns your delivery data into the metrics engineering leaders actually need: how work flows, where it stalls, how healthy the team is, and — increasingly — how AI is changing the way code gets written.
 
-## What DevPerform measures
+## What DevPerform gives you
 
-DevPerform analyzes your pull request history to compute:
+<CardGroup cols={2}>
+  <Card title="Delivery & flow" icon="gauge-high" href="/metrics/dora">
+    DORA's four keys, phased cycle time, review health, and weekly trends.
+  </Card>
+  <Card title="Code quality" icon="code-branch" href="/metrics/code-quality">
+    Line-level rework/churn and the files that change the most.
+  </Card>
+  <Card title="AI-native metrics" icon="robot" href="/metrics/ai-metrics">
+    Human vs. AI-assisted vs. agent-authored work, acceptance, and rework on AI code.
+  </Card>
+  <Card title="Team health" icon="heart-pulse" href="/surveys/overview">
+    DX and engagement surveys, driver analysis, goals, and an executive summary.
+  </Card>
+</CardGroup>
 
-- **Cycle time** — how long from PR open to merge
-- **Time to first review** — how long PRs wait before someone looks at them
-- **Merge rate** — what fraction of opened PRs actually ship
-- **Review throughput** — how many PRs each engineer reviews per period
-- **PR size distribution** — the breakdown of XS/S/M/L/XL PRs per engineer
+## A team-health tool, not a ranking tool
 
-These metrics update in real time as you pull from GitHub, no agents or CI plugins required.
+DevPerform measures **teams and systems**. Individual data is shown only as a person's own self-view or as a protective health signal (like a burnout flag) — never as a ranked "who's fastest" scoreboard. We don't treat lines of code or PR counts as productivity scores, and we don't track keystrokes or individual activity.
 
-## What DevPerform does not do
+This is a deliberate stance: gamifying individual output metrics backfires, and in the AI era raw line counts mean even less.
 
-DevPerform does not track commits, lines of code as a productivity proxy, or individual keystroke activity. The goal is to help teams spot process problems, not to score engineers.
+## How it works, briefly
 
-## How it works
+1. An admin connects a GitHub org and adds the repos to track.
+2. Engineers are added to a roster (manually or imported from your GitHub org).
+3. DevPerform **syncs your PR, review, and commit metadata into its own database** — hourly and on demand — so dashboards are fast and history builds up over time.
+4. Metrics are computed from that store and shown per team, per engineer, and org-wide.
 
-1. An admin connects a GitHub org and adds the repos to track
-2. Engineers are added to a roster with their GitHub handles
-3. DevPerform pulls PR data from the GitHub API using your OAuth token
-4. The dashboard shows team and per-engineer breakdowns for any date range
+DevPerform stores delivery **metadata** (PR titles, authors, timestamps, review events, file paths, line counts) and computed aggregates — **not your source code**. See [How DevPerform works](/how-it-works) for the full picture.
 
-No data is stored beyond what's needed to serve the dashboard. PR metadata (titles, authors, timestamps, review events) is fetched on demand.
+<Note>
+  Some metrics (rework/churn, AI-native metrics) are part of the **Pro** plan. Each metric page notes its plan. See [Plans](/plans).
+</Note>

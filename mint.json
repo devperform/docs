@@ -27,29 +27,56 @@
       "pages": [
         "introduction",
         "quickstart",
+        "how-it-works",
         "github-org-setup"
       ]
     },
     {
-      "group": "Concepts",
+      "group": "Metrics",
       "pages": [
         "concepts/metrics",
+        "metrics/dora",
+        "metrics/flow",
+        "metrics/code-quality",
+        "metrics/ai-metrics",
+        "metrics/investment"
+      ]
+    },
+    {
+      "group": "Dashboards",
+      "pages": [
+        "dashboard/team-view",
+        "dashboard/engineer-view",
+        "dashboard/executive",
+        "dashboard/filters"
+      ]
+    },
+    {
+      "group": "Surveys & Goals",
+      "pages": [
+        "surveys/overview",
+        "surveys/results",
+        "goals"
+      ]
+    },
+    {
+      "group": "Teams & People",
+      "pages": [
         "concepts/teams",
         "concepts/engineers"
       ]
     },
     {
-      "group": "Using the Dashboard",
+      "group": "Administration",
       "pages": [
-        "dashboard/team-view",
-        "dashboard/engineer-view",
-        "dashboard/filters"
+        "admin/setup",
+        "admin/import-members"
       ]
     },
     {
-      "group": "Administration",
+      "group": "Plans",
       "pages": [
-        "admin/setup"
+        "plans"
       ]
     }
   ],

@@ -1,0 +1,43 @@
+---
+title: How DevPerform Works
+description: Where your data comes from, what's stored, and how often it refreshes.
+---
+
+DevPerform is a **data pipeline plus an analytics layer**. Instead of calling the GitHub API every time you open a dashboard, it ingests your delivery data into its own database and computes metrics from that store. That's what makes dashboards fast and lets history accumulate for trends.
+
+## The pipeline
+
+```
+GitHub  ──(sync: hourly + on repo-add)──►  DevPerform database  ──►  metrics  ──►  dashboards
+        pull requests, reviews, comments,    (fast queries,
+        commits, files, deploys, incidents     history retained)
+```
+
+- **Ingestion** primarily uses GitHub's GraphQL API (one efficient query per page of PRs, including reviews, comments, commits, and per-file line counts), with a REST fallback if a request fails.
+- **Sync runs hourly** and immediately when you add a repo, so new PRs show up without you doing anything.
+- For the Pro **rework** metric, DevPerform additionally fetches recent commit diffs over a rolling ~21-day window to measure how much code is rewritten. Only the aggregate churn numbers are kept.
+
+## What's stored — and what isn't
+
+<CardGroup cols={2}>
+  <Card title="Stored" icon="database">
+    PR titles, authors, timestamps, review/comment events, merge state, file paths, and additions/deletions counts — plus the metrics computed from them.
+  </Card>
+  <Card title="Not stored" icon="shield-check">
+    Your source code. Commit diffs are fetched transiently to compute rework and are not retained as source.
+  </Card>
+</CardGroup>
+
+## Connecting GitHub
+
+You sign in with **GitHub OAuth**, which is also how DevPerform reads your org's PR data. Private repos inside an org require a one-time org approval — see [GitHub Org Setup](/github-org-setup).
+
+DevPerform can also operate as a **GitHub App** installed on your org, which uses scoped, server-to-server access tokens instead of relying on a single person's OAuth token and scales to larger orgs. If you're evaluating DevPerform for a bigger organization, ask us about the GitHub App.
+
+## Multi-tenant by design
+
+Every piece of data is scoped to your organization. Metrics queries always filter by your org, so one customer's data is never visible to another.
+
+## Freshness
+
+Because metrics come from the synced store, a brand-new PR appears at the next sync (within the hour, or immediately when you add its repo). If you've just connected a repo, give the first sync a minute to backfill history before the dashboards fill in.

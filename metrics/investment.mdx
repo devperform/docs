@@ -1,0 +1,29 @@
+---
+title: Investment & Allocation
+description: See where engineering effort actually goes — features, maintenance, and keeping the lights on.
+---
+
+The **Investment** view answers a question every VP of Engineering and CFO eventually asks: *where is our engineering time actually going?* DevPerform classifies merged work into categories and shows the split by effort.
+
+## Categories
+
+Every merged PR is bucketed into one of:
+
+| Category | Title signals |
+|----------|---------------|
+| **Features** | `feat:` / `perf:` — new capabilities and performance work |
+| **Maintenance** | `fix:` / `bugfix:` / `hotfix:` — bug fixes, patches, reverts, regressions |
+| **Keep-the-lights-on (KTLO)** | `chore:` / `refactor:` / `build:` / `ci:` / `docs:` / `test:` — refactors, dependency bumps, cleanup, infra, docs, tests |
+| **Uncategorized** | Anything that doesn't clearly match |
+
+Classification is derived from **PR titles** — conventional-commit prefixes first (`feat:`, `fix:`, `chore:`…), then a keyword fallback. It's a heuristic, not perfect labeling — DevPerform says so in the UI — but across many PRs it gives a reliable mix.
+
+## The views
+
+- **Investment mix** — the share of effort (by lines changed) in each category for the selected period, as a single bar plus per-category breakdown.
+- **Per-team scope** — filter the mix to a team and its sub-teams to compare how different groups spend their time.
+- **Over time** — a weekly stacked bar on the [executive dashboard](/dashboard/executive) shows the mix shifting across the last several weeks, so you can see (for example) maintenance creeping up over a quarter.
+
+## Why it matters
+
+A team spending 70% on KTLO is sending a clear signal about tech debt or operational load. Investment mix turns that from a gut feeling into a number you can track and act on — and it's the basis for the cost-capitalization / R&D reporting that finance teams care about.
