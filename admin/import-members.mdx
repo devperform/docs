@@ -1,0 +1,26 @@
+---
+title: Importing Your GitHub Org
+description: Seed your engineer roster from GitHub org membership in one click.
+---
+
+Rather than adding engineers one by one, an admin can import your entire GitHub organization's members to seed the roster.
+
+## How to import
+
+1. Go to **Admin → Engineer Roster**.
+2. Click **Import from GitHub org**.
+3. DevPerform reads your org's member list and creates an engineer for each, with their GitHub handle attached.
+
+Imported engineers start **ungrouped** — they appear under an **Unassigned** view until you assign them to [teams](/concepts/teams). DevPerform deliberately does *not* invent a placeholder "Engineering" team for you; the Unassigned view is just a prompt to organize people into the real teams you want.
+
+The import is **idempotent** and case-insensitive on handles, so running it again won't create duplicates — it only adds members who aren't already on the roster. Run it again after your org grows to pull in new hires.
+
+## Requirements
+
+- You must be an **admin**.
+- At least one repo must be configured, so DevPerform knows which GitHub org to read.
+- DevPerform needs **member-read access** to your org. If the import returns a permissions error, the GitHub connection hasn't been granted org membership access yet — re-authorize and try again, or contact us if you're using the GitHub App.
+
+## After importing
+
+Imported engineers behave exactly like manually-added ones: assign them to teams, add additional [handles](/concepts/engineers) if they use multiple accounts, and they'll start showing up in metrics as their PR activity syncs.

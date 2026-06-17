@@ -1,0 +1,44 @@
+---
+title: Flow & Review Health
+description: Phased cycle time, review health signals, and weekly trends.
+---
+
+Beyond the single cycle-time number, DevPerform breaks down *where* work spends its time and *how healthy* your review process is.
+
+## Phased cycle time
+
+Cycle time is split into four stages so you can see which part of the pipeline is slow:
+
+| Stage | From → to |
+|-------|-----------|
+| **Coding** | First commit → PR opened |
+| **Pickup** | PR opened → first review |
+| **Review** | First review → approved |
+| **Deploy** | Merged → deployed *(actions mode only)* |
+
+Shown as a stacked bar at the **team** level and on each engineer's own detail page as a **self-view**. A long pickup stage points to reviewers not getting to work; a long review stage points to back-and-forth on changes.
+
+<Note>
+  Coding time relies on first-commit data, which fills in as PRs are re-synced — newly tracked repos populate it gradually.
+</Note>
+
+## Review health
+
+Two signals on the Team Dashboard surface review-process risk:
+
+- **Unreviewed merges** — the count and percentage of merged PRs that shipped with **zero reviews**. A rising number is a quality/risk signal.
+- **Review depth** — the median number of comments per merged PR. Very low depth can mean rubber-stamping; this is a process signal, never a per-person score.
+
+Both respect the active team filter and date range.
+
+## Trends
+
+The **Trends** view plots weekly throughput (PRs opened and merged) and median cycle time over time, so you can see whether a change is an improvement or just noise. Trends can be scoped to a team.
+
+## Reading these together
+
+A healthy pattern is short, stable cycle time with consistent review depth and few unreviewed merges. When cycle time spikes, the phased breakdown tells you which stage moved, and the [executive view](/dashboard/executive) flags the week-over-week jump automatically.
+
+<Note>
+  Phased cycle time and review health are part of the **Growth** plan and up. See [Plans](/plans).
+</Note>

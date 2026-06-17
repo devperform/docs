@@ -1,0 +1,28 @@
+---
+title: Executive Summary
+description: One org-wide view of delivery health for leadership.
+---
+
+The **Executive Summary** is a leadership-level view that rolls up the whole organization into a single screen — less granular than the team dashboard, designed for a VP Eng or CTO who wants the headline, not the per-engineer table.
+
+## What's on it
+
+- **DORA four keys** with their Elite / High / Medium / Low bands.
+- **Goals on track** — how many of your [working agreements](/goals) are currently met.
+- **AI-assisted work** — the share of merged PRs involving AI ([AI metrics](/metrics/ai-metrics)).
+- **Investment mix** — where effort is going, plus a **week-over-week trend** of the mix ([investment](/metrics/investment)).
+- **Delivery trend** — weekly PRs merged and cycle time over the last several weeks.
+
+Each card loads independently, so a hiccup in one data source doesn't blank the whole page.
+
+## Anomaly insights
+
+DevPerform watches week-over-week movement on your key metrics and surfaces notable changes as plain-language insights — for example, *"cycle time is up 40% this week, driven by review pickup."* This appears as an insights banner so you don't have to go hunting through charts to notice a regression.
+
+<Note>
+  Proactive delivery of these insights to Slack and email is on the roadmap; today they surface in-app.
+</Note>
+
+## Date range
+
+Like the rest of the app, the executive view respects the date picker, so you can frame the summary to a sprint, a month, or a quarter.

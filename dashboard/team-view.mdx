@@ -3,25 +3,31 @@ title: Team Dashboard
 description: Understanding the team-level metrics view.
 ---
 
-The Team Dashboard is the main view in DevPerform. It shows aggregated and per-engineer metrics for your entire roster (or a filtered team) over a selected date range.
+The Team Dashboard is the main day-to-day view in DevPerform. It shows aggregated and per-engineer metrics for your entire roster (or a filtered team) over a selected date range.
 
 ## Summary cards
 
-The five cards at the top give a quick snapshot of the period:
+The cards at the top give a quick snapshot of the period:
 
 - **PRs Closed** — total PRs closed across all visible engineers
 - **Avg Cycle Time** — median cycle time averaged across engineers
 - **Review Turnaround** — median time-to-first-review averaged across engineers
 - **PRs Reviewed** — total review participation
 - **Avg Merge Rate** — average merge rate across engineers
+- **Unreviewed Merges** — how many merged PRs shipped with zero reviews (and the % of merges)
+- **Review Depth** — median comments per merged PR
 
-These update instantly when you change the date range or team filter.
+The last two are [review-health](/metrics/flow#review-health) signals. All cards update instantly when you change the date range or team filter.
+
+## Investment mix
+
+A per-team **[investment](/metrics/investment)** card shows how this team's effort split across features, maintenance, and keep-the-lights-on for the period. It rescopes when you change the team filter.
 
 ## Per-engineer table
 
-The table below the summary cards breaks down every metric by engineer. Click any column header to sort. Click any engineer row to drill into their [individual view](/dashboard/engineer-view).
+The table below breaks down every metric by engineer. Click any column header to sort. Click any engineer row to drill into their [individual view](/dashboard/engineer-view). Use the search box to filter the table by name without changing the summary cards.
 
-Use the search box to filter the table by name without changing the summary cards.
+A 🔥 **overload flag** appears next to any engineer whose open-PR count exceeds your org's burnout threshold — a protective signal that someone may be juggling too much, not a performance mark.
 
 ## Charts
 
@@ -29,21 +35,11 @@ Four charts visualize the team breakdown:
 
 - **PRs Closed vs Reviewed** — who's authoring vs reviewing
 - **Cycle Time & First Review** — time-based comparison across engineers
-- **Lines Changed** — output volume by engineer
+- **Lines Changed** — change volume by engineer (context for PR size, not a score)
 - **PR Size Distribution** — stacked bar showing each engineer's size habits
 
 Charts always reflect the team filter and date range, same as the summary cards.
 
-## Badges
-
-Standout performers in a period earn badges next to their name:
-
-| Badge | Meaning |
-|-------|---------|
-| ⚡ Speed Demon | Fastest cycle time on the team |
-| 🔍 Thorough Reviewer | Most review comments |
-| 🚀 High Output | Most PRs closed |
-| 🎯 Sharp Shooter | Highest merge rate |
-| 🤝 Team Player | Most PRs reviewed |
-
-Badges are relative — they go to the top engineer in each category for the current date range. They're meant as fun recognition, not rankings.
+<Note>
+  DevPerform intentionally does **not** rank engineers against each other — there are no "fastest" or "most output" leaderboards. Per-person data exists for an engineer's own self-view and for protective signals like the overload flag. See our [team-health stance](/introduction#a-team-health-tool-not-a-ranking-tool).
+</Note>

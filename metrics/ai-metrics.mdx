@@ -1,0 +1,47 @@
+---
+title: AI-Native Metrics
+description: Measure how AI coding tools are changing how your team ships.
+---
+
+<Note>
+  AI-native metrics are part of the **Pro** plan. See [Plans](/plans).
+</Note>
+
+As teams adopt coding agents (Claude Code, Cursor, Copilot, and others), the important questions change: how much work is AI-assisted, does AI-written code get accepted and stay, and does it shift the review burden? DevPerform measures all of this from your existing GitHub data — no IDE plugin required.
+
+## How authorship is detected
+
+DevPerform reads commit metadata (trailers and authoring identities) to attribute work to a tool — **Claude Code, Cursor, GitHub Copilot, Devin, Aider, or Codex** — and classifies each PR three ways:
+
+| Class | Meaning |
+|-------|---------|
+| **Human** | No AI attribution detected |
+| **Assisted** | A person authored, with AI help signals present |
+| **Agent** | Authored by an autonomous agent identity (e.g. Devin, Copilot's SWE agent) |
+
+<Warning>
+  These numbers are a **lower bound**. AI use that leaves no trace in commit metadata is invisible to detection, so real AI involvement is at least what's reported, often more. DevPerform states this honestly rather than overclaiming.
+</Warning>
+
+## The metrics
+
+<CardGroup cols={2}>
+  <Card title="Provenance" icon="signature">
+    Share of merged PRs and commits attributed to AI, broken down by tool and by human / assisted / agent.
+  </Card>
+  <Card title="Agent acceptance" icon="circle-check">
+    How often AI-attributed PRs get merged vs. closed unmerged, compared to human PRs.
+  </Card>
+  <Card title="Rework on AI code" icon="rotate">
+    Whether AI-written lines get rewritten more or less than human-written lines (built on the rework engine).
+  </Card>
+  <Card title="Review-burden shift" icon="magnifying-glass">
+    Comments per PR, time-to-first-review, and reviewed rate for AI vs. human work — does AI move the bottleneck to review?
+  </Card>
+</CardGroup>
+
+Most of these also expose a human / assisted / agent split, since agent-authored work is usually the sharpest cohort to watch.
+
+## How the data fills in
+
+AI attribution is stamped as commits are synced, so the numbers **backfill gradually** — only re-synced commits carry authorship. Expect coverage to improve over the first sync cycles after enabling Pro.
