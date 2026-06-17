@@ -9,14 +9,14 @@ The **Investment** view answers a question every VP of Engineering and CFO event
 
 Every merged PR is bucketed into one of:
 
-| Category | Examples |
-|----------|----------|
-| **Feature** | New capabilities and product work |
-| **Maintenance** | Refactors, dependency bumps, cleanup |
-| **Keep-the-lights-on (KTLO)** | Bug fixes, incident response, operational work |
-| **Other / uncategorized** | Anything that doesn't clearly match |
+| Category | Title signals |
+|----------|---------------|
+| **Features** | `feat:` / `perf:` — new capabilities and performance work |
+| **Maintenance** | `fix:` / `bugfix:` / `hotfix:` — bug fixes, patches, reverts, regressions |
+| **Keep-the-lights-on (KTLO)** | `chore:` / `refactor:` / `build:` / `ci:` / `docs:` / `test:` — refactors, dependency bumps, cleanup, infra, docs, tests |
+| **Uncategorized** | Anything that doesn't clearly match |
 
-Classification is derived from **PR titles** (conventional-commit prefixes like `feat:` / `fix:` / `chore:`, plus keyword heuristics). It's a heuristic, not a perfect labeling — DevPerform says so in the UI — but across many PRs it gives a reliable mix.
+Classification is derived from **PR titles** — conventional-commit prefixes first (`feat:`, `fix:`, `chore:`…), then a keyword fallback. It's a heuristic, not perfect labeling — DevPerform says so in the UI — but across many PRs it gives a reliable mix.
 
 ## The views
 

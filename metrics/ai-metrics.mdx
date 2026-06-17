@@ -11,7 +11,7 @@ As teams adopt coding agents (Claude Code, Cursor, Copilot, and others), the imp
 
 ## How authorship is detected
 
-DevPerform reads commit metadata (trailers and authoring identities) to attribute work to a tool — **Claude Code, Cursor, GitHub Copilot, Devin, Aider, or Codex** — and classifies each PR three ways:
+DevPerform reads commit metadata (trailers and authoring identities) to attribute work to a tool — **Claude Code, Cursor, GitHub Copilot, Devin, Aider, or OpenAI Codex** — and classifies each PR three ways:
 
 | Class | Meaning |
 |-------|---------|
@@ -37,6 +37,9 @@ DevPerform reads commit metadata (trailers and authoring identities) to attribut
   </Card>
   <Card title="Review-burden shift" icon="magnifying-glass">
     Comments per PR, time-to-first-review, and reviewed rate for AI vs. human work — does AI move the bottleneck to review?
+  </Card>
+  <Card title="Revert rate" icon="arrow-rotate-left">
+    How often AI-authored commits get reverted compared to human commits — a signal of whether AI code stays once it ships.
   </Card>
 </CardGroup>
 
