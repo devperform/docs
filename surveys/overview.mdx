@@ -14,15 +14,25 @@ Git metrics tell you *what* is happening; surveys tell you *why*. DevPerform inc
 Pick one or more built-in templates when creating a survey, and add your own questions alongside them:
 
 - **DX Core 4** — a validated developer-experience framework measuring flow, feedback loops, and friction. Rolls up into a [DX Index](/surveys/results#dx-index).
+- **Full Engagement** — a comprehensive ~5-minute engagement survey across seven dimensions: **Manager, Growth, Recognition, Enablement, Wellbeing, Belonging**, and overall **Engagement**. Scored per dimension, with key-driver analysis that surfaces which dimensions (and which questions) most move engagement. Best for periodic deep reads (quarterly / half-yearly). See the [engagement scorecard](/surveys/results#engagement-scorecard).
 - **eNPS** — "how likely are you to recommend this as a place to work," scored on the −100 to 100 eNPS scale, with an open follow-up.
-- **Engagement** — team-satisfaction Likert items for morale and engagement tracking.
+- **Engagement** — a short team-satisfaction pulse (a lighter alternative to Full Engagement).
 - **Custom questions** — add your own Likert or open-text items to any survey.
+
+## Managing surveys
+
+The **Surveys** page has two tabs:
+
+- **Manage** — create, edit drafts, send, resend, close, and **archive** surveys. Filter the list by status, time period, or search; archived surveys drop out of the list but their data is retained for trends and comparisons.
+- **Insights** — analyze results across surveys, teams, and time. See [Reading results](/surveys/results).
+
+Surveys are **account-wide**: they can reach engineers across all of your connected GitHub orgs, and you choose recipients **by team** (or the whole company) when sending — only people with an email on file can be sent to.
 
 ## How delivery works
 
-1. **Map identities** — in Admin, map each engineer's GitHub handle to a work email so DevPerform knows where to send.
-2. **Create a survey** — pick a template, customize questions, set a deadline.
-3. **Send** — DevPerform emails each engineer a unique tokenized link. They answer on a hosted page — **no login required**.
+1. **Map identities** — in Admin, map each engineer's GitHub handle to a work email so DevPerform knows where to send. (You can also add a missing email inline from the team roster.)
+2. **Create a survey** — pick one or more templates, customize questions, and choose who receives it — by team or the whole company.
+3. **Send** — DevPerform emails each engineer a unique tokenized link with a time estimate. They answer on a hosted page — **no login required**. Set an optional deadline.
 4. **Reminders** — automatic reminders nudge people who haven't responded before the deadline.
 
 <Note>

@@ -1,26 +1,51 @@
 ---
 title: Reading Survey Results
-description: DX Index, heatmaps, driver analysis, and trends — with anonymity built in.
+description: The engagement scorecard, key drivers, comparisons, and trends — with anonymity built in.
 ---
 
-Once a survey clears the [anonymity threshold](/surveys/overview#anonymity-by-default), its results unlock. DevPerform goes beyond raw averages to help you find what to actually do.
+Once a survey clears the [anonymity threshold](/surveys/overview#anonymity-by-default), its results unlock under the **Insights** tab of the Surveys page. DevPerform goes beyond raw averages to help you find what to actually do.
+
+## Engagement scorecard
+
+A [Full Engagement](/surveys/overview#survey-types) survey is shown as a **scorecard** — the whole instrument on one page:
+
+- **Overall engagement** — a single 0–100 score, with the change since your previous wave.
+- **Every dimension** — Manager, Growth, Recognition, Enablement, Wellbeing, Belonging, and Engagement — each with its score, a bar, and the wave-over-wave change.
+
+Use the **Team** selector to scope the entire scorecard (overall, dimensions, drivers, and comparison) to a single team. A team's scores stay hidden until it clears the anonymity threshold on its own.
+
+### Key drivers
+
+Driver analysis finds which dimensions most **correlate with engagement** across respondents — the levers that actually move it. A dimension with **high impact but a low score** is flagged as a **focus area**: high leverage, currently weak. Click any dimension to drill into **which of its questions** are doing the driving, so you go from "Growth is dragging engagement" to the specific item behind it.
+
+<Note>
+  Key-driver analysis is a correlation, so it needs a few responses to be meaningful — it stays hidden until a survey has enough.
+</Note>
+
+### Compare over time
+
+Pick **any two administrations** to compare (this quarter vs. last, H1 vs. H2, year over year) and the overall and per-dimension deltas update to that baseline. An **overall-engagement trend line** plots every wave so you can see the trajectory at a glance.
 
 ## DX Index
 
-For DX-style surveys, responses roll up into a single trackable **DX Index** — one number you can watch over time, rather than juggling a dozen question scores.
+For DX-style surveys (DX Core 4 and other Likert templates), responses roll up into a single trackable **DX Index** — one number you can watch over time, rather than juggling a dozen question scores.
 
-## Per-team heatmap
+## Compare across teams and time
 
-The heatmap shows scores by question across teams, so you can spot at a glance which group is struggling with which dimension (e.g. one team red on "code review speed," another on "local environment"). It respects the anonymity threshold per cell — small segments stay hidden.
+The Insights explorer lets you trend any single metric — **Engagement / DX Index, eNPS, or response rate** — over time, with one line per team plus a company-wide overall, and a current-period bar comparison across teams. Pick the metric, the teams, and a date range.
 
-## Driver analysis
+## Per-survey heatmap
 
-Driver analysis correlates survey sentiment with your **actual delivery telemetry** — connecting, for example, low "flow" scores with measured cycle-time or review-pickup data. This is what turns a survey from a vibe check into a prioritized list of what's really holding the team back, and it's unique to having both datasets in one place.
+For a single survey, the heatmap shows scores by question across teams, so you can spot at a glance which group is struggling with which dimension. It respects the anonymity threshold per cell — small segments stay hidden.
 
-## Trends over time
+## Delivery driver analysis
 
-Repeated sends of the same survey are tracked over time, so you can see whether an intervention moved sentiment — and whether it moved the delivery metrics alongside it.
+Beyond the in-survey key drivers above, DevPerform can correlate survey sentiment with your **actual delivery telemetry** — connecting, for example, low scores with measured cycle-time or review-pickup data. This is unique to having both datasets in one place: it ties how the team *feels* to how it's *delivering*.
+
+## Saved views
+
+Save a metric + team + filter combination as a **named view**, shared across your account's admins — so "Engagement by Platform team" or "eNPS, last quarter" is one click away for everyone.
 
 ## Anonymity, everywhere
 
-Every results view — index, heatmap cells, driver analysis, trends — enforces the minimum-response threshold. If a segment is too small to be anonymous, its numbers are withheld rather than shown.
+Every scored view — the scorecard, dimensions, drivers, comparisons, heatmap cells, and trends — enforces the minimum-response threshold. If a segment is too small to be anonymous, its numbers are withheld rather than shown. (Response rate, a participation count rather than an answer, is always available.)
