@@ -1,0 +1,45 @@
+---
+title: Slack
+description: Connect Slack to get a weekly team-health digest and deliver surveys over Slack DM.
+---
+
+Connect a Slack workspace to DevPerform to receive a **weekly team-health digest** in a channel of your choice, and to **deliver surveys over Slack DM** instead of (or alongside) email. It's optional, admin-only, and you can disconnect at any time.
+
+## Connect your workspace
+
+1. Go to **Admin → Slack**.
+2. Click **Add to Slack** and approve the requested permissions in Slack.
+3. You'll land back on the Admin page with Slack connected.
+
+Each DevPerform account connects a single Slack workspace. Only account admins can connect, disconnect, or change Slack settings.
+
+## Weekly team-health digest
+
+Once connected, pick a **channel** under Admin → Slack. Every **Monday morning** DevPerform posts a short digest there:
+
+- Last week's delivery headline — PRs merged and median cycle time.
+- Any notable **week-over-week changes** (e.g. "Cycle time ↑ 40% vs the prior weeks"), so regressions surface without anyone opening a dashboard.
+
+Use **Send digest now** to preview it immediately instead of waiting for Monday.
+
+## Deliver surveys over Slack
+
+When you send a survey, choose how it goes out under **Deliver via**:
+
+- **Email** — the default.
+- **Slack DM** — DevPerform matches each recipient to their Slack account by email and sends the survey link as a direct message. Anyone not in the workspace (or whose Slack email doesn't match) automatically **falls back to email**, so no one is missed.
+- **Both** — email and Slack DM.
+
+Reminders follow the same channel the survey was sent on. Responses stay **anonymous** exactly as they do over email — a Slack DM is one-to-one, and individual answers are never attributed.
+
+<Note>
+Survey delivery over Slack matches people by their email address, so an engineer must have an email on file in DevPerform and be in the connected Slack workspace with that same address. Otherwise they receive the survey by email.
+</Note>
+
+## Permissions
+
+DevPerform requests only what it needs: post messages, list channels for the digest picker, and look up users by email for survey delivery. It never reads your messages.
+
+## Disconnect
+
+Go to **Admin → Slack → Disconnect**. DevPerform forgets the workspace token immediately; digests and Slack survey delivery stop (surveys fall back to email).

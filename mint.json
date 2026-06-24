@@ -67,6 +67,12 @@
       ]
     },
     {
+      "group": "Integrations",
+      "pages": [
+        "integrations/slack"
+      ]
+    },
+    {
       "group": "Administration",
       "pages": [
         "admin/setup",
