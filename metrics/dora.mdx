@@ -23,13 +23,13 @@ Deployment Frequency and Lead Time depend on knowing when you ship. DevPerform s
     A merge to a repo's default branch counts as a deploy. Lead time is measured **PR open → merge**. This works with zero CI configuration.
   </Tab>
   <Tab title="Actions mode">
-    A deploy is a **successful run of a named GitHub Actions workflow** (you provide the workflow name). Lead time is measured **merge → deploy**, attributing each shipped PR to the deploy that carried it. Use this when you have a real deploy pipeline and want production-accurate timing.
+    A deploy is a **real successful deploy** from your host — a named GitHub Actions workflow run, or a GitLab / Bitbucket Deployment (you provide the workflow or environment name). Lead time is measured **merge → deploy**, attributing each shipped PR to the deploy that carried it. Use this when you have a real deploy pipeline and want production-accurate timing.
   </Tab>
 </Tabs>
 
 ## Where failures come from
 
-Change Failure Rate and Time to Restore need incident data. DevPerform treats **GitHub issues carrying your org's incident label** as incidents — no separate incident tool required. Set the label in Org Settings. CFR is incidents ÷ deploys over the window; Time to Restore is the median open→close time of those issues.
+Change Failure Rate and Time to Restore need incident data. DevPerform treats **issues carrying your org's incident label** as incidents (GitHub/GitLab labels; Bitbucket matches on title) — no separate incident tool required. Set the label in Org Settings. CFR is incidents ÷ deploys over the window; Time to Restore is the median open→close time of those issues.
 
 ## Bands
 
