@@ -1,0 +1,30 @@
+---
+title: Code Quality — Rework & Hotspots
+description: Line-level rework/churn and the files that change the most.
+---
+
+<Note>
+  Rework and hotspots are part of the **Pro** plan. See [Plans](/plans).
+</Note>
+
+These metrics look past delivery speed at the *stability* of the code being shipped.
+
+## Rework / churn
+
+**Rework** is the percentage of recently-written lines that get rewritten again within a short window (~21 days). It's the GitClear-style "code churn" signal: high rework means code is thrashing — written, then quickly rewritten — which often indicates unclear requirements, rushed work, or design churn.
+
+How DevPerform measures it:
+
+- It tracks each line's lifetime across commits (when a line was introduced and when it was overwritten).
+- **Generated, vendored, and lock files are excluded** (e.g. bundles, `package-lock.json`) so they don't inflate the number.
+- The result is shown as a rate with a health band (healthy / elevated / high).
+
+A healthy baseline is typically in the low-to-mid teens (%). Persistently high rework on a team or repo is worth a conversation about scope and review.
+
+## Churn hotspots
+
+**Hotspots** rank the files that change the most across merged PRs — by number of changes, additions, deletions, and how many PRs touched them. They point you to the parts of the codebase that absorb the most ongoing effort, which are good candidates for refactoring, better test coverage, or clearer ownership.
+
+## Why this pairs with AI
+
+Rework is also the foundation for the AI-native [rework-on-AI-code](/metrics/ai-metrics) metric: because DevPerform knows each line's authorship, it can compare whether AI-written code churns more or less than human-written code.

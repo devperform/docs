@@ -1,13 +1,21 @@
 ---
 title: Engineer View
-description: The per-engineer detail page.
+description: The per-engineer detail page (a self-view, not a ranking).
 ---
 
-Clicking any engineer row in the team dashboard opens their individual detail page. This shows everything in the team view scoped to a single engineer, plus a list of their recent PRs.
+Clicking an engineer row in the team dashboard opens their individual detail page. It scopes the team metrics to one person and adds their recent PR history.
+
+<Note>
+  This page is designed as a **self-view** — useful for an engineer to understand their own work and for a manager and engineer to look at together. It is not a tool for ranking people against each other; there are no peer comparisons here.
+</Note>
+
+## Phased cycle time
+
+The detail page includes the engineer's own [phased cycle time](/metrics/flow#phased-cycle-time) — coding, pickup, and review stages — so they can see where their PRs tend to spend time. The deploy stage is measured at the org level.
 
 ## PR history
 
-The detail page lists the engineer's merged PRs for the selected date range, including:
+A list of the engineer's merged PRs for the selected date range, each with:
 
 - PR title and repo
 - Date merged
@@ -15,8 +23,8 @@ The detail page lists the engineer's merged PRs for the selected date range, inc
 - Cycle time for that PR
 - Link to the PR/MR on your code host
 
-This makes it easy to understand what drove a spike or drop in cycle time for a specific period.
+This makes it easy to see what drove a spike or dip in a given period.
 
 ## Navigating back
 
-Use the back button or the breadcrumb at the top of the page to return to the team dashboard. The date range is preserved.
+Use the back button or breadcrumb to return to the team dashboard. The date range is preserved.

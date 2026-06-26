@@ -1,0 +1,46 @@
+---
+title: Surveys Overview
+description: Measure developer experience and team sentiment alongside your delivery data.
+---
+
+Git metrics tell you *what* is happening; surveys tell you *why*. DevPerform includes a survey product so you can pair objective delivery data with how your team actually feels — and correlate the two.
+
+<Note>
+  Surveys are part of the **Growth** plan and up. See [Plans](/plans).
+</Note>
+
+## Survey types
+
+Pick one or more built-in templates when creating a survey, and add your own questions alongside them:
+
+- **DX Core 4** — a validated developer-experience framework measuring flow, feedback loops, and friction. Rolls up into a [DX Index](/surveys/results#dx-index).
+- **Full Engagement** — a comprehensive ~5-minute engagement survey across seven dimensions: **Manager, Growth, Recognition, Enablement, Wellbeing, Belonging**, and overall **Engagement**. Scored per dimension, with key-driver analysis that surfaces which dimensions (and which questions) most move engagement. Best for periodic deep reads (quarterly / half-yearly). See the [engagement scorecard](/surveys/results#engagement-scorecard).
+- **eNPS** — "how likely are you to recommend this as a place to work," scored on the −100 to 100 eNPS scale, with an open follow-up.
+- **Engagement** — a short team-satisfaction pulse (a lighter alternative to Full Engagement).
+- **Custom questions** — add your own Likert or open-text items to any survey.
+
+## Managing surveys
+
+The **Surveys** page has two tabs:
+
+- **Manage** — create, edit drafts, send, resend, close, and **archive** surveys. Filter the list by status, time period, or search; archived surveys drop out of the list but their data is retained for trends and comparisons.
+- **Insights** — analyze results across surveys, teams, and time. See [Reading results](/surveys/results).
+
+Surveys are **account-wide**: they can reach engineers across all of your connected GitHub orgs, and you choose recipients **by team** (or the whole company) when sending — only people with an email on file can be sent to.
+
+## How delivery works
+
+1. **Map identities** — in Admin, map each engineer's GitHub handle to a work email so DevPerform knows where to send. (You can also add a missing email inline from the team roster.)
+2. **Create a survey** — pick one or more templates, customize questions, and choose who receives it — by team or the whole company.
+3. **Send** — DevPerform emails each engineer a unique tokenized link with a time estimate. They answer on a hosted page — **no login required**. Set an optional deadline.
+4. **Reminders** — automatic reminders nudge people who haven't responded before the deadline.
+
+<Note>
+  Slack delivery (higher response rates) is on the roadmap; email is the channel today.
+</Note>
+
+## Anonymity by default
+
+Engineers' individual answers are never exposed. Results only become visible once a survey (or a filtered segment) has at least the **minimum number of responses** — **4 by default**, configurable in Org Settings. Below that threshold, DevPerform shows "not enough responses yet" instead of anything that could de-anonymize a small group.
+
+This is core to the product's stance: surveys are for understanding the team, not surveilling individuals. See [Reading results](/surveys/results).

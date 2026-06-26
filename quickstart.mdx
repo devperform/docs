@@ -3,51 +3,48 @@ title: Quickstart
 description: Go from zero to a live dashboard in about 10 minutes.
 ---
 
-## Step 1 — Sign in
+<Steps>
+  <Step title="Sign in">
+    Go to [devperform.io](https://devperform.io) and click **Sign in with GitHub**, **GitLab**, or **Bitbucket** — whichever your team uses — and authorize DevPerform. Then connect your repos: GitHub grants org access (see [GitHub Org Setup](/github-org-setup)); GitLab and Bitbucket connect via a button (see [GitLab Setup](/gitlab-setup) and [Bitbucket Setup](/bitbucket-setup)), which auto-tracks your accessible repos.
+  </Step>
+  <Step title="Claim admin">
+    The first person to sign in claims the admin role — click **Claim Admin** on the dashboard prompt. This only works once; subsequent users become regular members. If you skip it, sign out and back in and the prompt reappears until an admin exists.
+  </Step>
+  <Step title="Add repos">
+    Connecting GitLab/Bitbucket auto-tracks your repos; for GitHub (or to add more), in **Admin** add them as `owner/repo` (GitHub org/repo, GitLab `group/project`, or Bitbucket `workspace/repo`, e.g. `acme/backend`). All tracked repos are analyzed together. The first sync backfills history in the background.
+  </Step>
+  <Step title="Build your roster">
+    Under **Engineer Roster**, either click **Import your team** to seed your whole org / group / workspace at once ([details](/admin/import-members)), or add engineers manually. Each needs a name and at least one [handle](/concepts/engineers); handles can be multiple per person.
+  </Step>
+  <Step title="Organize into teams (optional)">
+    Under **Teams**, create a nested team hierarchy and assign engineers. The dashboard team filter scopes metrics to a team and its sub-teams.
 
-Go to [devperform.io](https://devperform.io) and click **Sign in with GitHub**, **GitLab**, or **Bitbucket** — whichever your team uses. You'll be redirected to your host to authorize DevPerform.
+    ```
+    Engineering
+    ├── Platform
+    └── Product
+        ├── Frontend
+        └── Backend
+    ```
+  </Step>
+  <Step title="Explore">
+    Open **Dashboard** for the team view (last 30 days by default). From there, explore the [DORA dashboard](/metrics/dora), [trends and flow](/metrics/flow), and the [executive summary](/dashboard/executive). Use the date picker and team dropdown to scope any view.
+  </Step>
+</Steps>
 
-Then connect your repos:
+## What's next
 
-- **GitHub** — grant access to the organization whose repos you want to track. See [GitHub Org Setup](/github-org-setup).
-- **GitLab** — click **Connect GitLab** (supports gitlab.com and self-hosted). See [GitLab Setup](/gitlab-setup).
-- **Bitbucket** — click **Connect Bitbucket**. See [Bitbucket Setup](/bitbucket-setup).
-
-## Step 2 — Claim admin
-
-The first person to sign in needs to claim the admin role. After signing in you'll see a prompt on the dashboard — click **Claim Admin**. This only works once; subsequent users become regular members.
-
-If you accidentally skip this step, sign out and sign back in — the prompt will reappear until an admin exists.
-
-## Step 3 — Add repos
-
-Connecting GitLab or Bitbucket auto-tracks your accessible repos. For GitHub (or to add more), go to **Admin** in the sidebar and add repos by `owner/repo`, for example `acme/backend` (GitHub org/repo, GitLab `group/project`, or Bitbucket `workspace/repo`).
-
-You can add multiple repos. All of them are queried together when computing team metrics.
-
-## Step 4 — Add engineers
-
-Still in the Admin panel, add your engineers under **Engineer Roster**. Each engineer needs:
-
-- A display name
-- At least one username (handle) on your code host
-
-Or use **Import your team** to pull your whole org / group / workspace in one click (names + avatars; emails are filled in automatically from commit metadata). Engineers can have multiple handles if they use different accounts. Handles are how DevPerform links PR/MR activity back to a person on your roster.
-
-## Step 5 — Organize into teams (optional)
-
-Under **Teams** in Admin, you can create a team hierarchy up to 3 levels deep — for example:
-
-```
-Engineering
-├── Platform
-└── Product
-    ├── Frontend
-    └── Backend
-```
-
-Assign each engineer to a team. The dashboard team filter lets you scope metrics to a single team and its sub-teams.
-
-## Step 6 — View the dashboard
-
-Click **Dashboard** in the sidebar. The default view shows the last 30 days across your whole roster. Use the date picker to adjust the range and the team dropdown to filter by team.
+<CardGroup cols={2}>
+  <Card title="Run a survey" icon="clipboard-question" href="/surveys/overview">
+    Pair your delivery data with how the team actually feels.
+  </Card>
+  <Card title="Set team goals" icon="bullseye" href="/goals">
+    Commit to measurable working agreements and track them.
+  </Card>
+  <Card title="Configure DORA" icon="gauge-high" href="/metrics/dora">
+    Pick your deploy signal and incident label for accurate DORA.
+  </Card>
+  <Card title="See your plan" icon="layer-group" href="/plans">
+    Find out which metrics your tier unlocks.
+  </Card>
+</CardGroup>
