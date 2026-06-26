@@ -3,7 +3,7 @@ title: Introduction
 description: Engineering intelligence built for teams that care about flow and health, not surveillance.
 ---
 
-DevPerform connects to your GitHub organization and turns your delivery data into the metrics engineering leaders actually need: how work flows, where it stalls, how healthy the team is, and — increasingly — how AI is changing the way code gets written.
+DevPerform connects to your code host — **GitHub, GitLab, or Bitbucket** — and turns your delivery data into the metrics engineering leaders actually need: how work flows, where it stalls, how healthy the team is, and — increasingly — how AI is changing the way code gets written. Everything works the same whichever of the three your team uses.
 
 ## What DevPerform gives you
 
@@ -30,10 +30,12 @@ This is a deliberate stance: gamifying individual output metrics backfires, and 
 
 ## How it works, briefly
 
-1. An admin connects a GitHub org and adds the repos to track.
-2. Engineers are added to a roster (manually or imported from your GitHub org).
-3. DevPerform **syncs your PR, review, and commit metadata into its own database** — hourly and on demand — so dashboards are fast and history builds up over time.
+1. Sign in with **GitHub, GitLab, or Bitbucket**, then connect the org / group / workspace and add the repos to track.
+2. Engineers are added to a roster (manually or imported from your org / group / workspace in one click).
+3. DevPerform **syncs your PR/MR, review, and commit metadata into its own database** — hourly and on demand — so dashboards are fast and history builds up over time.
 4. Metrics are computed from that store and shown per team, per engineer, and org-wide.
+
+Use a different code host (e.g. Azure DevOps)? [Contact sales](mailto:sales@devperform.io) — we add providers based on demand.
 
 DevPerform stores delivery **metadata** (PR titles, authors, timestamps, review events, file paths, line counts) and computed aggregates — **not your source code**. See [How DevPerform works](/how-it-works) for the full picture.
 

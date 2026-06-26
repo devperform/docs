@@ -28,7 +28,9 @@
         "introduction",
         "quickstart",
         "how-it-works",
-        "github-org-setup"
+        "github-org-setup",
+        "gitlab-setup",
+        "bitbucket-setup"
       ]
     },
     {

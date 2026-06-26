@@ -4,17 +4,17 @@ description: Go from zero to a live dashboard in about 10 minutes.
 ---
 
 <Steps>
-  <Step title="Sign in with GitHub">
-    Go to [devperform.io](https://devperform.io) and click **Sign in with GitHub** to authorize the DevPerform OAuth app. When prompted, grant access to the GitHub organization whose repos you want to track. See [GitHub Org Setup](/github-org-setup) for details.
+  <Step title="Sign in">
+    Go to [devperform.io](https://devperform.io) and click **Sign in with GitHub**, **GitLab**, or **Bitbucket** — whichever your team uses — and authorize DevPerform. Then connect your repos: GitHub grants org access (see [GitHub Org Setup](/github-org-setup)); GitLab and Bitbucket connect via a button (see [GitLab Setup](/gitlab-setup) and [Bitbucket Setup](/bitbucket-setup)), which auto-tracks your accessible repos.
   </Step>
   <Step title="Claim admin">
     The first person to sign in claims the admin role — click **Claim Admin** on the dashboard prompt. This only works once; subsequent users become regular members. If you skip it, sign out and back in and the prompt reappears until an admin exists.
   </Step>
   <Step title="Add repos">
-    In **Admin**, add the repos to track using `owner/repo` (e.g. `acme/backend`). All tracked repos are analyzed together. The first sync backfills history and runs in the background.
+    Connecting GitLab/Bitbucket auto-tracks your repos; for GitHub (or to add more), in **Admin** add them as `owner/repo` (GitHub org/repo, GitLab `group/project`, or Bitbucket `workspace/repo`, e.g. `acme/backend`). All tracked repos are analyzed together. The first sync backfills history in the background.
   </Step>
   <Step title="Build your roster">
-    Under **Engineer Roster**, either click **Import from GitHub org** to seed everyone at once ([details](/admin/import-members)), or add engineers manually. Each needs a name and at least one GitHub [handle](/concepts/engineers); handles can be multiple per person.
+    Under **Engineer Roster**, either click **Import your team** to seed your whole org / group / workspace at once ([details](/admin/import-members)), or add engineers manually. Each needs a name and at least one [handle](/concepts/engineers); handles can be multiple per person.
   </Step>
   <Step title="Organize into teams (optional)">
     Under **Teams**, create a nested team hierarchy and assign engineers. The dashboard team filter scopes metrics to a team and its sub-teams.

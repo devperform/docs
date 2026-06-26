@@ -11,17 +11,17 @@ Under **Admin → Org Settings** you can configure:
 
 - **Organization name** — the display name shown across the app.
 - **Burnout threshold** — the open-PR count that triggers the protective 🔥 overload flag in the team table. Default is **5**.
-- **Deploy detection mode** — how [DORA](/metrics/dora) detects deploys: **merges** to the default branch (default, zero-config) or successful runs of a named GitHub Actions **workflow**. In actions mode, set the workflow name.
-- **Incident label** — the GitHub issue label DevPerform treats as an incident, used for DORA change-failure-rate and time-to-restore.
+- **Deploy detection mode** — how [DORA](/metrics/dora) detects deploys: **merges** to the default branch (default, zero-config) or real deploys (GitHub Actions workflow runs / GitLab / Bitbucket Deployments). In actions mode, set the workflow or environment name.
+- **Incident label** — the issue label DevPerform treats as an incident (GitHub/GitLab labels; Bitbucket matches on title), used for DORA change-failure-rate and time-to-restore.
 - **Survey anonymity threshold** — the minimum responses before [survey results](/surveys/results) are revealed. Default is **4**.
 
 ## Repos
 
-Add repos as `owner/repo` (e.g. `acme/backend`). All tracked repos are analyzed together for a given date range. Removing a repo only stops DevPerform tracking it — nothing changes in GitHub. Adding a repo kicks off an immediate background sync.
+Add repos as `owner/repo` — GitHub org/repo, GitLab `group/project`, or Bitbucket `workspace/repo` (e.g. `acme/backend`). Connecting GitLab or Bitbucket auto-tracks your accessible repos, so this is mainly for GitHub or extras. All tracked repos are analyzed together for a given date range. Removing a repo only stops DevPerform tracking it — nothing changes on your code host. Adding a repo kicks off an immediate background sync.
 
 ## Engineer roster
 
-Add engineers with a name and at least one GitHub handle, or **import your whole GitHub org at once** — see [Importing your GitHub org](/admin/import-members). For surveys, also map each engineer's **work email**. See [Engineer Roster](/concepts/engineers) for multiple handles and deactivation.
+Add engineers with a name and at least one handle, or **import your whole org / group / workspace at once** — see [Importing your team](/admin/import-members). For surveys, also map each engineer's **work email** (emails are also auto-filled from commit metadata). See [Engineer Roster](/concepts/engineers) for multiple handles and deactivation.
 
 ## Teams
 

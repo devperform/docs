@@ -1,26 +1,26 @@
 ---
 title: Engineer Roster
-description: How DevPerform identifies engineers and links GitHub activity to your team.
+description: How DevPerform identifies engineers and links code-host activity to your team.
 ---
 
-The engineer roster is the source of truth for who is on your team. DevPerform uses it to connect GitHub PR activity to named engineers.
+The engineer roster is the source of truth for who is on your team. DevPerform uses it to connect pull/merge request activity to named engineers.
 
-## GitHub handles
+## Handles
 
-Each engineer needs at least one GitHub username (handle). This is how DevPerform matches PR authors and reviewers to people on your roster.
+Each engineer needs at least one username (handle) on your code host — GitHub, GitLab, or Bitbucket. This is how DevPerform matches PR/MR authors and reviewers to people on your roster.
 
-Engineers can have **multiple handles** — useful if someone uses separate personal and work GitHub accounts, or if they changed their GitHub username at some point.
+Engineers can have **multiple handles** — useful if someone uses separate personal and work accounts, has handles on more than one host, or changed their username at some point.
 
 ## Adding engineers
 
 Go to **Admin → Engineer Roster** and click **Add Engineer**. You'll need:
 
 - A display name (how they appear in the dashboard)
-- At least one GitHub handle
-- Optionally: email address (required for [surveys](/surveys/overview)) and team assignment
+- At least one handle
+- Optionally: email address (for [surveys](/surveys/overview)) and team assignment
 
 <Tip>
-  To seed your whole team at once, use **Import from GitHub org** instead of adding people one by one. See [Importing your GitHub org](/admin/import-members).
+  To seed your whole team at once, use **Import your team** instead of adding people one by one — see [Importing your team](/admin/import-members). Emails are filled in automatically from commit metadata (the reliable source across hosts and on private repos), and you can always edit one by hand.
 </Tip>
 
 ## Deactivating engineers
@@ -29,14 +29,14 @@ Clicking the remove button on an engineer **deactivates** them rather than delet
 
 ## Engineers not on the roster
 
-If a PR in a tracked repo is authored by a GitHub user who isn't on the roster, that engineer's data simply won't appear in the team dashboard. They're not blocked — their PRs still count for review metrics of engineers who reviewed their work.
+If a PR/MR in a tracked repo is authored by someone who isn't on the roster, that engineer's data simply won't appear in the team dashboard. They're not blocked — their PRs still count for review metrics of engineers who reviewed their work.
 
 This is intentional: contractors, external contributors, or bot accounts often author PRs but shouldn't appear in team metrics.
 
 ## Multiple handles example
 
 An engineer named Alex might have:
-- `alex-dev` — their work GitHub account (used for all PRs in your org)
+- `alex-dev` — their work account (used for all PRs in your org)
 - `alexsmith` — their personal account (used for open-source work that occasionally touches company repos)
 
 Adding both handles ensures both accounts' activity rolls up to Alex's row in the dashboard.
