@@ -27,7 +27,9 @@
       "pages": [
         "introduction",
         "quickstart",
-        "github-org-setup"
+        "github-org-setup",
+        "gitlab-setup",
+        "bitbucket-setup"
       ]
     },
     {

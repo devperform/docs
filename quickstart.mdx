@@ -3,11 +3,15 @@ title: Quickstart
 description: Go from zero to a live dashboard in about 10 minutes.
 ---
 
-## Step 1 — Sign in with GitHub
+## Step 1 — Sign in
 
-Go to [devperform.io](https://devperform.io) and click **Sign in with GitHub**. You'll be redirected to GitHub to authorize the DevPerform OAuth app.
+Go to [devperform.io](https://devperform.io) and click **Sign in with GitHub**, **GitLab**, or **Bitbucket** — whichever your team uses. You'll be redirected to your host to authorize DevPerform.
 
-When prompted, make sure to grant access to the GitHub organization whose repos you want to track. See [GitHub Org Setup](/github-org-setup) for details on this step.
+Then connect your repos:
+
+- **GitHub** — grant access to the organization whose repos you want to track. See [GitHub Org Setup](/github-org-setup).
+- **GitLab** — click **Connect GitLab** (supports gitlab.com and self-hosted). See [GitLab Setup](/gitlab-setup).
+- **Bitbucket** — click **Connect Bitbucket**. See [Bitbucket Setup](/bitbucket-setup).
 
 ## Step 2 — Claim admin
 
@@ -17,7 +21,7 @@ If you accidentally skip this step, sign out and sign back in — the prompt wil
 
 ## Step 3 — Add repos
 
-Go to **Admin** in the sidebar and add the GitHub repos you want to track. Use the format `org/repo`, for example `acme/backend`.
+Connecting GitLab or Bitbucket auto-tracks your accessible repos. For GitHub (or to add more), go to **Admin** in the sidebar and add repos by `owner/repo`, for example `acme/backend` (GitHub org/repo, GitLab `group/project`, or Bitbucket `workspace/repo`).
 
 You can add multiple repos. All of them are queried together when computing team metrics.
 
@@ -26,9 +30,9 @@ You can add multiple repos. All of them are queried together when computing team
 Still in the Admin panel, add your engineers under **Engineer Roster**. Each engineer needs:
 
 - A display name
-- At least one GitHub username (handle)
+- At least one username (handle) on your code host
 
-Engineers can have multiple handles if they use different accounts for personal and work contributions. Handles are how DevPerform links GitHub PR activity back to a person on your roster.
+Or use **Import your team** to pull your whole org / group / workspace in one click (names + avatars; emails are filled in automatically from commit metadata). Engineers can have multiple handles if they use different accounts. Handles are how DevPerform links PR/MR activity back to a person on your roster.
 
 ## Step 5 — Organize into teams (optional)
 

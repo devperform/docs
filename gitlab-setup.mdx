@@ -1,0 +1,31 @@
+---
+title: GitLab Setup
+description: Connect a GitLab group or project — gitlab.com or self-hosted.
+---
+
+DevPerform reads merge requests, approvals, and commits from GitLab to compute the same metrics it does for GitHub.
+
+## Connect GitLab
+
+1. Sign in to DevPerform (with GitLab, or any provider).
+2. In **Admin → Connect a code host**, click **Connect GitLab**.
+3. Authorize DevPerform on the GitLab consent screen. It requests **read-only** access (`read_api`, `read_user`) — enough to read merge requests, projects, and members; it never writes to your code.
+4. DevPerform creates your GitLab workspace, auto-tracks the projects you can access, and starts syncing immediately.
+
+<Note>
+  Connecting GitLab also signs you in — a GitLab-only team never needs a GitHub account.
+</Note>
+
+## Self-hosted GitLab
+
+Self-hosted instances (behind your own SSO) are supported. When connecting, expand **Self-hosted?** and enter your instance URL (e.g. `https://gitlab.your-company.com`). Your instance enforces its own SSO during authorization.
+
+Self-hosted instances need a one-time OAuth application registered on your GitLab. [Contact us](mailto:sales@devperform.io) and we'll walk your admin through it.
+
+## What gets read
+
+- Merge requests + approvals, comments, commits, and diffs (cycle time, review health, churn)
+- Project deployments and labeled issues (for DORA — optional)
+- Group / project members (for the one-click team import)
+
+Read-only throughout. DevPerform never pushes code, comments, or status checks.

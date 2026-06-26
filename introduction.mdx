@@ -3,19 +3,20 @@ title: Introduction
 description: Engineering performance analytics built for teams that care about flow, not surveillance.
 ---
 
-DevPerform connects to your GitHub organization and surfaces the metrics that matter for engineering teams: how long PRs sit before review, how often work ships, and where the bottlenecks are.
+DevPerform connects to your code host — **GitHub, GitLab, or Bitbucket** — and surfaces the metrics that matter for engineering teams: how long PRs sit before review, how often work ships, and where the bottlenecks are.
 
 ## What DevPerform measures
 
-DevPerform analyzes your pull request history to compute:
+DevPerform analyzes your pull/merge request history to compute:
 
 - **Cycle time** — how long from PR open to merge
 - **Time to first review** — how long PRs wait before someone looks at them
 - **Merge rate** — what fraction of opened PRs actually ship
 - **Review throughput** — how many PRs each engineer reviews per period
 - **PR size distribution** — the breakdown of XS/S/M/L/XL PRs per engineer
+- **DORA** — deployment frequency, lead time, change failure rate, time to restore
 
-These metrics update in real time as you pull from GitHub, no agents or CI plugins required.
+These metrics update as you sync from your host — no agents or CI plugins required. Everything works the same whether your team is on GitHub, GitLab, or Bitbucket.
 
 ## What DevPerform does not do
 
@@ -23,9 +24,10 @@ DevPerform does not track commits, lines of code as a productivity proxy, or ind
 
 ## How it works
 
-1. An admin connects a GitHub org and adds the repos to track
-2. Engineers are added to a roster with their GitHub handles
-3. DevPerform pulls PR data from the GitHub API using your OAuth token
-4. The dashboard shows team and per-engineer breakdowns for any date range
+1. Sign in with **GitHub, GitLab, or Bitbucket** — whichever your team uses
+2. An admin connects the org / group / workspace and adds the repos to track
+3. Engineers are added to a roster (or imported in one click) with their handles
+4. DevPerform syncs PR/MR data from your host and computes metrics from it
+5. The dashboard shows team and per-engineer breakdowns for any date range
 
-No data is stored beyond what's needed to serve the dashboard. PR metadata (titles, authors, timestamps, review events) is fetched on demand.
+Use a different code host (e.g. Azure DevOps)? [Contact sales](mailto:sales@devperform.io) — we add providers based on demand.

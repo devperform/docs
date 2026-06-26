@@ -1,0 +1,30 @@
+---
+title: Bitbucket Setup
+description: Connect a Bitbucket Cloud workspace.
+---
+
+DevPerform reads pull requests, approvals, and commits from Bitbucket Cloud to compute the same metrics it does for GitHub and GitLab.
+
+## Connect Bitbucket
+
+1. Sign in to DevPerform (with Bitbucket, or any provider).
+2. In **Admin → Connect a code host**, click **Connect Bitbucket**.
+3. Authorize DevPerform on the Bitbucket consent screen — **read-only** access to your account, repositories, and pull requests.
+4. DevPerform creates your workspace, auto-tracks accessible repos, and starts syncing.
+
+<Note>
+  Connecting Bitbucket also signs you in — a Bitbucket-only team never needs a GitHub account.
+</Note>
+
+## What gets read
+
+- Pull requests + approvals, comments, commits, and diffs (cycle time, review health, churn)
+- Deployments and issues (for DORA — optional; issue tracking needs the `issue` read scope)
+- Workspace members (for the one-click team import)
+
+Read-only throughout.
+
+## Notes
+
+- **Bitbucket Cloud** (bitbucket.org) is supported today. Self-hosted Bitbucket Data Center uses a different API — [contact us](mailto:sales@devperform.io) if you need it.
+- Bitbucket doesn't expose member emails via its API, so DevPerform fills engineer emails from commit metadata instead — no manual entry needed.
