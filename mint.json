@@ -39,6 +39,7 @@
         "concepts/metrics",
         "metrics/dora",
         "metrics/flow",
+        "metrics/cicd",
         "metrics/code-quality",
         "metrics/ai-metrics",
         "metrics/investment"
