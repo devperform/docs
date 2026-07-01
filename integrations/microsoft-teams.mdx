@@ -1,0 +1,39 @@
+---
+title: Microsoft Teams
+description: Post the weekly team-health digest to a Microsoft Teams channel via a webhook.
+---
+
+Connect a Microsoft Teams channel to receive DevPerform's **weekly team-health digest** — the same content as the [Slack digest](/integrations/slack), delivered to the channel of your choice. It's optional, admin-only, and takes about a minute to set up.
+
+Unlike Slack, Teams delivery is **webhook-based** — there's no app to install and no admin consent needed. You create a webhook on the channel and paste the URL into DevPerform.
+
+## 1. Create a channel webhook
+
+In Microsoft Teams, use the built-in **Workflows** app to create an incoming webhook:
+
+1. Next to the channel name, click **⋯ → Workflows** (or open the **Workflows** app).
+2. Choose the template **"Post to a channel when a webhook request is received."**
+3. Pick the **team** and **channel** you want the digest in, and finish.
+4. **Copy the workflow's URL** — that's your webhook.
+
+<Note>
+  Microsoft is replacing the older "Incoming Webhook" connector with **Workflows**, so the Workflows route above is the current, supported way. If your org still has the classic Incoming Webhook connector, that URL works too.
+</Note>
+
+## 2. Connect it in DevPerform
+
+1. Go to **Admin → Connections → Microsoft Teams**.
+2. Paste the **webhook URL** (and an optional label, e.g. `#engineering`).
+3. Click **Connect Teams**. DevPerform posts a confirmation card to the channel — if you see it, you're set.
+
+## What you get
+
+- **Weekly team-health digest** — every Monday, a card with last week's delivery headline (PRs opened/merged, median cycle time), current open-PR count, notable week-over-week changes, and (if enabled) AI highlights.
+- **Send digest now / Send test** — preview it any time from the Admin panel.
+- **Weekly digest toggle** — turn the schedule on or off without disconnecting.
+
+More Teams delivery — stale-PR nudges, anomaly alerts, and per-person survey DMs — is on the roadmap.
+
+## Managing the connection
+
+Everything lives under **Admin → Connections → Microsoft Teams**: send a test, send the digest immediately, toggle the weekly schedule, or **Disconnect**. Only account admins can manage it. To change channels, create a new webhook and reconnect.

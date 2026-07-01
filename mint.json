@@ -73,7 +73,8 @@
       "group": "Integrations",
       "pages": [
         "integrations/issue-trackers",
-        "integrations/slack"
+        "integrations/slack",
+        "integrations/microsoft-teams"
       ]
     },
     {
