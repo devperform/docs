@@ -1,0 +1,30 @@
+---
+title: CI/CD Analytics
+description: Pipeline health — success rate, duration, and flaky-run/flaky-test detection across GitHub, GitLab, and Bitbucket.
+---
+
+DevPerform ingests your CI/CD pipeline runs and turns them into health metrics, shown alongside your delivery data. It works with **GitHub Actions**, **GitLab pipelines**, and **Bitbucket Pipelines** — no setup beyond connecting your code host.
+
+## Pipeline health
+
+For the selected window — overall and **broken down by workflow/pipeline**:
+
+- **Run volume** — how many pipeline runs completed.
+- **Success rate** — the percentage that succeeded.
+- **Duration** — median and p90 wall-clock time, so slow pipelines stand out.
+
+## Flaky runs
+
+A **flaky run** is one that failed and then **passed on a re-run of the same commit** — a strong signal of nondeterministic tests or flaky infrastructure. DevPerform surfaces a **flaky rate** so you can quantify how much re-running your team does.
+
+<Note>Flaky-run detection relies on CI re-run attempts, which **GitHub Actions** exposes. GitLab and Bitbucket don't report attempt numbers, so they show 0% flaky.</Note>
+
+## Flaky tests
+
+Beyond whole runs, DevPerform pinpoints the **individual tests** that are flaky — a test that **failed in a run whose pipeline also passed on the same commit**. They're ranked so you can fix the worst offenders first.
+
+Flaky-test detection reads your **JUnit XML test reports**. To turn it on, have your CI upload its JUnit results as a build artifact (for example, a GitHub Actions `upload-artifact` step for your `junit.xml`). The panel stays hidden until there's data.
+
+## Where to find it
+
+CI/CD metrics appear on the **delivery dashboard**, next to your DORA keys.
