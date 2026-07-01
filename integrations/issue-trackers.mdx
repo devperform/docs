@@ -1,0 +1,42 @@
+---
+title: Issue trackers
+description: Connect Jira, Linear, or Azure DevOps Boards to map issues to pull requests — real effort allocation by initiative and planning analytics.
+---
+
+Connect your issue tracker to DevPerform to link **issues to the pull requests that deliver them**. That unlocks **Investment by Initiative** (where did our engineering effort actually go, by epic or project?) plus issue-level cycle time and planning views — grounded in real ticket → PR mapping, not guesswork.
+
+DevPerform supports **Jira**, **Linear**, and **Azure DevOps Boards**. The connection is **account-wide** (one tracker per company) and admin-only. Access is **read-only** — DevPerform never changes your tracker's data.
+
+## Connect
+
+1. Go to **Admin → Connections → Issue tracker**.
+2. Click **Connect Jira**, **Connect Linear**, or **Connect Azure DevOps**.
+3. Approve the requested read access on your tracker.
+4. You'll return to Admin with the tracker connected. DevPerform immediately syncs your issues and links them to your pull requests.
+
+Use **Sync now** any time to pull the latest and re-link.
+
+## How issue ↔ PR linking works
+
+DevPerform links a pull request to an issue when the issue's **key** appears in the PR's **branch name, title, or description**:
+
+- **Jira / Linear** — the issue key, e.g. `PROJ-123` or `ENG-42`.
+- **Azure DevOps** — the Boards reference `AB#123` (a bare `#123` is ignored, since it collides with GitHub PR/issue numbers).
+
+Most teams already do this — a branch named `feature/ENG-42-…` or `AB#123` in the PR description is enough. Linear and Azure DevOps can generate a matching branch name straight from the work item.
+
+## What you get
+
+- **Investment by Initiative** — merged-PR effort rolled up to the **epic** (Jira / Azure DevOps) or **project** (Linear) it belongs to, so you can see how effort splits across the roadmap.
+- **Planning & delivery** — issue status, story points, and cycle time alongside your delivery metrics.
+
+## Per-tracker notes
+
+### Jira
+Works with **Jira Cloud**. On connect you'll choose the Atlassian site to authorize; DevPerform reads issues, projects, and fields.
+
+### Linear
+Linear has no epics, so an issue rolls up to its **Project** as the initiative. Connect authorizes read access to your workspace.
+
+### Azure DevOps Boards
+Azure DevOps authenticates through **Microsoft Entra ID**. If your organization restricts third-party apps, an org admin may need to enable **Organization settings → Policies → "Third-party application access via OAuth"** before the connect will succeed. Work items roll up **Epic → Feature → Story → Task** to the top-level epic.
