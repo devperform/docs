@@ -30,6 +30,10 @@ In Microsoft Teams, use the built-in **Workflows** app to create an incoming web
 2. Paste the **webhook URL** (and an optional label, e.g. `#engineering`).
 3. Click **Connect Teams**. DevPerform posts a confirmation card to the channel — if you see it, you're set.
 
+<Note>
+  For security, DevPerform only accepts webhook URLs on Microsoft's domains (`webhook.office.com`, `logic.azure.com`, or `powerplatform.com`) — every URL Teams or Power Automate generates qualifies. If yours is rejected, copy it again from the workflow's trigger step rather than a proxy or shortened link.
+</Note>
+
 ## What you get
 
 - **Weekly team-health digest** — every Monday, a card with last week's delivery headline (PRs opened/merged, median cycle time), current open-PR count, notable week-over-week changes, and (if enabled) AI highlights.
