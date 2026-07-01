@@ -1,0 +1,27 @@
+---
+title: Incident tools
+description: Connect PagerDuty so DORA change-failure-rate and time-to-restore use real incidents.
+---
+
+Connect your incident tool so DevPerform's **DORA change-failure-rate** and **time-to-restore (MTTR)** are based on **real incidents** — instead of the fallback heuristic of counting issues labeled `incident` in your repos.
+
+DevPerform supports **PagerDuty** today (Datadog and Opsgenie are on the roadmap). The connection is **account-wide** and admin-only, and uses a **read-only API token** — no OAuth app to register.
+
+## Connect PagerDuty
+
+1. In PagerDuty, create a **read-only** REST API key: **Integrations → API Access Keys → Create New API Key**, tick **Read-only**, and copy it.
+2. In DevPerform, go to **Admin → Connections → Incident tool**.
+3. Paste the token and click **Connect PagerDuty**. DevPerform verifies it and starts syncing your incidents.
+
+Use **Sync now** any time to pull the latest, or **Disconnect** to stop.
+
+## What it changes
+
+- **Change-failure-rate** — incidents ÷ deployments in the window, using your real PagerDuty incidents.
+- **Time-to-restore (MTTR)** — median time from a PagerDuty incident's creation to its resolution.
+
+Both flow into your existing **DORA dashboard** automatically, counted at the **account level** (across all your connected orgs).
+
+<Note>
+  Until an incident tool is connected, DevPerform falls back to counting issues labeled `incident` in your repos. PagerDuty is the more accurate source, so connecting it is recommended if you use it.
+</Note>
