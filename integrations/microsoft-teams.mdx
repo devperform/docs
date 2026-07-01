@@ -11,13 +11,17 @@ Unlike Slack, Teams delivery is **webhook-based** — there's no app to install 
 
 In Microsoft Teams, use the built-in **Workflows** app to create an incoming webhook:
 
-1. Next to the channel name, click **⋯ → Workflows** (or open the **Workflows** app).
-2. Choose the template **"Post to a channel when a webhook request is received."**
-3. Pick the **team** and **channel** you want the digest in, and finish.
-4. **Copy the workflow's URL** — that's your webhook.
+1. Next to the channel name, click **⋯ (More options) → Workflows** (or open the **Workflows** app).
+2. In the template search box, type **`webhook`** and choose **"Send webhook alerts to a channel."**
+3. Confirm the connection, pick the **team** and **channel** you want, and click **Add workflow**.
+4. **Copy the workflow's URL** — that's your webhook. (Paste it into DevPerform in the next step.)
+
+<Warning>
+  Pick **"Send webhook alerts to a channel"** — *not* the "from specific people" or "from people in an org" variants. Those add a sender allowlist, and since DevPerform posts from outside your organization, they will block its messages. Also avoid the "…to a chat" template — you want a **channel**.
+</Warning>
 
 <Note>
-  Microsoft is replacing the older "Incoming Webhook" connector with **Workflows**, so the Workflows route above is the current, supported way. If your org still has the classic Incoming Webhook connector, that URL works too.
+  Microsoft renamed this template (it was formerly "Post to a channel when a webhook request is received") and replaced the older "Incoming Webhook" connector with **Workflows**. If you close the dialog before copying the URL, get it back via the channel's **⋯ → Workflows → your workflow → edit** (the trigger step shows the URL), or from **[make.powerautomate.com](https://make.powerautomate.com) → My flows**.
 </Note>
 
 ## 2. Connect it in DevPerform
