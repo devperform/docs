@@ -3,7 +3,7 @@ title: Team & Engineer Metrics
 description: The core delivery metrics on the team dashboard and how they're calculated.
 ---
 
-These are the foundational metrics on the [Team Dashboard](/dashboard/team-view), available on every plan. They're computed from your ingested pull-request data for the selected date range — a PR counts in a period if it was **merged or closed** within that window.
+These are the foundational metrics on the [Team Dashboard](/dashboard/team-view), available on every plan. They're computed from your ingested pull-request data for the selected date range — a PR counts in a period if it was **merged or closed** within that window. Pull requests opened by **automation bots** (Dependabot, Renovate, and similar `[bot]` accounts) are excluded from team throughput, trends, anomaly alerts, and investment allocation — so a dependency-update storm never masquerades as team output. AI **coding agents** (Devin, Copilot coding agent, and similar) are counted: their merged work is real output, tracked separately in the [AI metrics](/metrics/ai-metrics).
 
 <Note>
   Looking for DORA, phased cycle time, rework, AI, or investment metrics? Those have their own pages under **Metrics**.
@@ -15,7 +15,7 @@ These are the foundational metrics on the [Team Dashboard](/dashboard/team-view)
 
 ## Time to First Review
 
-**Median hours from PR open to the first review.** Isolates the "waiting for a reviewer" portion of cycle time. High cycle time but low time-to-first-review points to the review-to-merge phase; high time-to-first-review means reviewers aren't picking work up fast enough.
+**Median hours from PR open to the first reviewer engagement** — a review event *or* a reviewer comment (on GitLab and Bitbucket, review often happens in comments rather than formal approvals). Isolates the "waiting for a reviewer" portion of cycle time. High cycle time but low time-to-first-review points to the review-to-merge phase; high time-to-first-review means reviewers aren't picking work up fast enough.
 
 ## Merge Rate
 
