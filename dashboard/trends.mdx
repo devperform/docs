@@ -1,0 +1,20 @@
+---
+title: Trends
+description: Weekly delivery, review-health, and CI trends — with anomalous weeks flagged.
+---
+
+The Trends page shows how your team's delivery is moving week by week (UTC weeks, Monday-start), over the last 8–52 weeks, for all teams or a single team.
+
+## Charts
+
+- **Throughput** — PRs opened vs merged per week. Weeks the anomaly detector flags (±25% vs the trailing month, the same rule that drives Slack/Teams alerts) are highlighted in red.
+- **Speed** — median cycle time (open → merge) alongside median **time to first review**, so you can see whether slowdowns come from review pickup or from the review-to-merge phase.
+- **Review health** — the share of PRs merged with **no review**, and the **top reviewer's share** of all review activity. A rising top-reviewer line means review load is concentrating on one person.
+- **People & batch size** — distinct contributors merging each week, next to median PR size. Growing PR sizes are the most common silent driver of rising cycle time.
+- **Work in progress** — how many PRs were open at each week's end, and their median age. A climbing line means work is starting faster than it's finishing.
+- **CI health** — pipeline success rate and median duration per week (shown once CI runs are ingested; repo-wide, not filtered by team).
+
+## Notes
+
+- The right-most point is the **current, in-progress week** — expect it to look low until the week completes. Anomaly flagging skips it.
+- PRs from automation bots (Dependabot, Renovate, and similar) are excluded; AI coding agents' work is included.

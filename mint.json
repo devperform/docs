@@ -49,6 +49,7 @@
       "group": "Dashboards",
       "pages": [
         "dashboard/team-view",
+        "dashboard/trends",
         "dashboard/engineer-view",
         "dashboard/executive",
         "dashboard/filters"
