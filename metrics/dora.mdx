@@ -9,7 +9,7 @@ DORA (DevOps Research and Assessment) defines four widely-used measures of softw
 
 | Metric | What it measures | How DevPerform derives it |
 |--------|------------------|---------------------------|
-| **Deployment Frequency** | How often you ship | Merges to the default branch, or successful runs of a named deploy workflow |
+| **Deployment Frequency** | How often you ship | Merged pull requests, or successful runs of a named deploy workflow |
 | **Lead Time for Changes** | How long from work to production | Median PR open→merge (merges mode) or merge→deploy (actions mode) |
 | **Change Failure Rate** | How often a change causes a failure | Incidents ÷ deploys in the window |
 | **Time to Restore** | How fast you recover | Median time from incident opened → resolved |
@@ -20,7 +20,7 @@ Deployment Frequency and Lead Time depend on knowing when you ship. DevPerform s
 
 <Tabs>
   <Tab title="Merges mode (default)">
-    A merge to a repo's default branch counts as a deploy. Lead time is measured **PR open → merge**. This works with zero CI configuration.
+    Every merged pull request counts as a deploy. Lead time is measured **PR open → merge**. This works with zero CI configuration.
   </Tab>
   <Tab title="Actions mode">
     A deploy is a **real successful deploy** from your host — a named GitHub Actions workflow run, or a GitLab / Bitbucket Deployment (you provide the workflow or environment name). Lead time is measured **merge → deploy**, attributing each shipped PR to the deploy that carried it. Use this when you have a real deploy pipeline and want production-accurate timing.

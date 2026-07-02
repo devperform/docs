@@ -12,8 +12,8 @@ Cycle time is split into four stages so you can see which part of the pipeline i
 | Stage | From → to |
 |-------|-----------|
 | **Coding** | First commit → PR opened |
-| **Pickup** | PR opened → first review |
-| **Review** | First review → approved |
+| **Pickup** | PR opened → first review (or merge, if never reviewed) |
+| **Review** | First review → merged |
 | **Deploy** | Merged → deployed *(actions mode only)* |
 
 Shown as a stacked bar at the **team** level and on each engineer's own detail page as a **self-view**. A long pickup stage points to reviewers not getting to work; a long review stage points to back-and-forth on changes.
