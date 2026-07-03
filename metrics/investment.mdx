@@ -27,3 +27,14 @@ Classification is derived from **PR titles** — conventional-commit prefixes fi
 ## Why it matters
 
 A team spending 70% on KTLO is sending a clear signal about tech debt or operational load. Investment mix turns that from a gut feeling into a number you can track and act on — and it's the basis for the cost-capitalization / R&D reporting that finance teams care about.
+
+## Improving categorization accuracy
+
+Categories come from PR titles, so title hygiene directly improves the mix. What the categorizer understands, in priority order:
+
+1. **Conventional-commit prefixes** — `feat:`, `perf:` (Features); `fix:`, `hotfix:` (Maintenance); `chore:`, `refactor:`, `ci:`, `docs:`, `deps:` … (Keep-the-lights-on). The most precise signal — adopt these if you adopt nothing else.
+2. **Version bumps** — `pkg: 1.2 -> 1.3`, "update foo to v2.1", any `A -> B` transition (KTLO).
+3. **Recognizable shapes** — `init at X` (new component → Features), `[Backport …]` (Maintenance), `scope: remove/drop/disable` (Maintenance), `scope: use/move/replace/migrate` (KTLO).
+4. **Branch prefixes** — `feat/…`, `fix/…`, `dependabot/…` rescue a PR whose title carries no signal.
+
+"Uncategorized" means none of the above matched — usually a title like *"various improvements"*. A team using conventional commits typically sees under 5% uncategorized.
