@@ -32,6 +32,24 @@ Or as an org admin:
 1. Go to your **GitHub org → Settings → Third-party Access → OAuth app policy**
 2. Find **DevPerform** and click **Grant access**
 
+## Repository access selection (GitHub App installs)
+
+If you connected by **installing the DevPerform GitHub App** on your org (the guided
+"Connect GitHub" flow), GitHub asks which repositories the app may access:
+
+- **All repositories** — recommended; new repos are picked up automatically.
+- **Only select repositories** — fine too, but make sure you actually select at least one.
+
+If the installation ends up with **no repositories granted** (nothing selected, or an org
+admin later trims the app's access), DevPerform can't see any code activity and your
+dashboard shows a banner instead of data. To fix it:
+
+1. On GitHub, go to **your org → Settings → GitHub Apps → DevPerform → Configure** and
+   grant access to the repositories you want tracked.
+2. Back in DevPerform, click **Re-check repositories** on the banner (or wait a moment —
+   access changes sync automatically). Newly granted repos are tracked and their history
+   backfills in the background.
+
 ## Verifying access
 
 Once access is granted, go back to DevPerform Admin and add a repo from that org. If it loads metrics without an error, the token has the right access.
