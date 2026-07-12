@@ -7,8 +7,8 @@ description: Go from zero to a live dashboard in about 10 minutes.
   <Step title="Sign in">
     Go to [devperform.io](https://devperform.io) and click **Sign in with GitHub**, **GitLab**, or **Bitbucket** — whichever your team uses — and authorize DevPerform. Then connect your repos: GitHub grants org access (see [GitHub Org Setup](/github-org-setup)); GitLab and Bitbucket connect via a button (see [GitLab Setup](/gitlab-setup) and [Bitbucket Setup](/bitbucket-setup)), which auto-tracks your accessible repos.
   </Step>
-  <Step title="Claim admin">
-    The first person to sign in claims the admin role — click **Claim Admin** on the dashboard prompt. This only works once; subsequent users become regular members. If you skip it, sign out and back in and the prompt reappears until an admin exists.
+  <Step title="You're the admin — automatically">
+    Whoever connects the code host becomes the account's admin and owner — there's no separate step. Installing the GitHub App or connecting GitLab/Bitbucket grants the admin role on the spot (those flows already require admin rights on the code host side). To bring in teammates, send invites from **Admin → People & Teams** and pick the **Member** or **Admin** role for each invite.
   </Step>
   <Step title="Add repos">
     Connecting GitLab/Bitbucket auto-tracks your repos; for GitHub (or to add more), in **Admin** add them as `owner/repo` (GitHub org/repo, GitLab `group/project`, or Bitbucket `workspace/repo`, e.g. `acme/backend`). All tracked repos are analyzed together. The first sync backfills history in the background.
