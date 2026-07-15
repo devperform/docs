@@ -1,0 +1,20 @@
+---
+title: AI ROI Report
+description: Survey-reported time savings fused with AI-authorship telemetry — the exec-facing AI ROI number, computed honestly.
+---
+
+The AI ROI report (Pro, admin-only) answers the question every engineering leader gets asked: **"what are we actually getting from AI coding tools?"** It fuses two sources you already have in DevPerform:
+
+1. **What your engineers report** — three survey questions from the AI impact set: weekly time saved by AI tools, confidence in AI-generated code quality, and the share of work that's substantially agent-written. Responses aggregate at team level with the same anonymity suppression as every other survey result.
+2. **What the code shows** — AI-authored share of merged PRs and AI-vs-human rework, from commit-trailer detection on your git history. No agents or daemons on developer machines.
+
+## The math, transparently
+
+- Estimated savings = **median** reported hours saved per week × active contributors × a loaded hourly cost you enter (median, so one enthusiastic answer can't inflate the number; the top "8h+" bucket is deliberately capped at 10h in the math).
+- Your hourly-cost and AI-spend inputs live only in your browser — DevPerform never stores compensation data.
+- Entering monthly AI spend adds a net-ROI line and cost per AI-assisted PR.
+- Telemetry is shown **alongside** the self-reported figure, never multiplied into it — self-reports are perception data, telemetry is a lower bound, and the report says so on the page.
+
+## No individual tracking
+
+Some tools compute AI ROI by tracking individual developers before and after AI adoption. DevPerform doesn't — adoption and impact are measured for teams only, by design. See the [AI Impact views](/metrics/ai-metrics) for team-level cohort and trend analysis.
