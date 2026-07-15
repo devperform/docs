@@ -49,3 +49,10 @@ Save a metric + team + filter combination as a **named view**, shared across you
 ## Anonymity, everywhere
 
 Every scored view — the scorecard, dimensions, drivers, comparisons, heatmap cells, and trends — enforces the minimum-response threshold. If a segment is too small to be anonymous, its numbers are withheld rather than shown. (Response rate, a participation count rather than an answer, is always available.)
+
+## The Experience Index
+
+Every survey's likert questions roll up into a single **Experience Index** (0–100): each 1–5 question is averaged across respondents, those averages are averaged, and the result rescales to 0–100. eNPS, free-text, and quantitative bucket questions never feed it. The results page shows the index with a trend against your previous survey wave (waves suppressed by the anonymity threshold are skipped, never leaked), per-team indices under the same thresholds, and a "how is this computed?" breakdown — one number is a conversation starter, not a verdict.
+
+Where a survey includes eNPS, results show the standard interpretation bands (above 0 good, above 20 favorable, above 50 excellent, above 80 world class — the Bain & Company thresholds as published by Qualtrics; the UI notes this is the general NPS scale, not an engineering-specific benchmark).
+
