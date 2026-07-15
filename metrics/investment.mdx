@@ -28,6 +28,22 @@ Classification is derived from **PR titles** — conventional-commit prefixes fi
 
 A team spending 70% on KTLO is sending a clear signal about tech debt or operational load. Investment mix turns that from a gut feeling into a number you can track and act on — and it's the basis for the cost-capitalization / R&D reporting that finance teams care about.
 
+## Custom categorization rules
+
+When title conventions aren't enough — a repo that's entirely KTLO, a `platform/*` branch family that's always Features — admins can define **categorization rules** under **Admin → Settings → Investment categorization rules**. A rule matches PRs on structured fields, ANDed together:
+
+- **Repository** and **branch** (glob patterns, e.g. `infra-*` or `release/*`)
+- **Title** (contains, or a regex — validated when you save it)
+- **Changed file paths** (prefix, e.g. `docs/`)
+
+Rules are ordered by **priority — the first enabled rule that matches wins**, and anything no rule matches falls back to the title conventions above. The same rule engine drives the investment mix, the weekly trend, and cost capitalization, so the numbers always agree, and the views show how many PRs were rule-matched vs convention-categorized so the split stays explainable.
+
+Rules are **read-only analytics**: DevPerform never writes labels, reviewers, or anything else back to your code host.
+
+<Note>
+Rules recompute live, including for past periods — if you change rules after capturing a cost-capitalization report, re-running it can differ. Export the CSV when you need a point-in-time record.
+</Note>
+
 ## Improving categorization accuracy
 
 Categories come from PR titles, so title hygiene directly improves the mix. What the categorizer understands, in priority order:
