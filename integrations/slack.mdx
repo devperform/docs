@@ -36,6 +36,23 @@ Reminders follow the same channel the survey was sent on. Responses stay **anony
 Survey delivery over Slack matches people by their email address, so an engineer must have an email on file in DevPerform and be in the connected Slack workspace with that same address. Otherwise they receive the survey by email.
 </Note>
 
+## Personal PR notifications (opt-in)
+
+Beyond the team digest, each engineer can opt in to **Slack DMs about their own pull requests** under **Settings → Personal notifications**. Pick which events you want:
+
+- **PR approved** / **Changes requested** — a reviewer acted on your PR.
+- **Review requested** — someone asked you to review their PR.
+- **PR merged** — your PR was merged by someone else.
+- **CI failed** / **CI passed** — a CI run on your PR finished (CI passed is off by default; it can be chatty).
+
+Three things to know:
+
+- **Self-only, always.** Notifications go to the person the PR belongs to — never to a manager, never to a channel, never aggregated. There is no admin view of anyone's notification activity.
+- **Off by default.** Nobody gets DMs until they turn them on themselves, and there's a **Send test DM** button to confirm delivery.
+- **Near-real-time on GitHub** (driven by code-host webhooks). DMs find you by email, so your DevPerform email must match your Slack account's email.
+
+Requires a connected Slack workspace on a plan that includes Slack features.
+
 ## Permissions
 
 DevPerform requests only what it needs: post messages, list channels for the digest picker, and look up users by email for survey delivery. It never reads your messages.
