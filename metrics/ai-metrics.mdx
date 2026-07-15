@@ -48,3 +48,12 @@ Most of these also expose a human / assisted / agent split, since agent-authored
 ## How the data fills in
 
 AI attribution is stamped as commits are synced, so the numbers **backfill gradually** — only re-synced commits carry authorship. Expect coverage to improve over the first sync cycles after enabling Pro.
+
+## AI Impact views
+
+The **AI Impact** page (Pro) adds two team-level analyses:
+
+- **Adoption cohorts** — with four or more teams, DevPerform splits them into higher- and lower-AI-adoption cohorts at the median and compares cycle time, throughput per contributor, unreviewed-merge rate, and revert rate. Below four teams you get honest per-team rows instead of a forced split.
+- **Adoption vs delivery trends** — weekly AI-authored PR share charted against cycle time, throughput, and revert rate, so "did delivery change as AI ramped?" is answerable at a glance.
+
+Both views measure adoption from AI-attributed commits (a lower bound) and carry a correlation-is-not-causation note. **DevPerform never tracks individual AI usage** — the smallest unit in any AI metric is a team.

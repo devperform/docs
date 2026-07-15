@@ -42,6 +42,7 @@
         "metrics/cicd",
         "metrics/code-quality",
         "metrics/ai-metrics",
+        "metrics/ai-roi",
         "metrics/investment",
         "metrics/benchmark"
       ]
