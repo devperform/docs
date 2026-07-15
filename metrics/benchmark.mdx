@@ -1,0 +1,34 @@
+---
+title: The Free Benchmark
+description: How the public repo benchmark works, what it measures, and where the industry bands come from.
+---
+
+The [free benchmark](https://devperform.io/benchmark) scores any **public GitHub repo** in seconds — no signup, no installation. Paste a repo, get a scorecard. It's the fastest way to see the kind of analysis DevPerform runs continuously on your own private repos.
+
+## What it measures
+
+Computed from the repo's recently merged pull requests (public data only — we read PR metadata, never your code):
+
+| Metric | What it is |
+|---|---|
+| **Cycle time** | Median hours from PR opened to merged |
+| **Time to first review** | Median hours from PR opened to the first non-author review or comment (pickup time) |
+| **PR size** | Median lines changed per merged PR |
+| **Throughput** | Merged PRs per week |
+
+## Where the bands come from
+
+Each metric is labeled **Elite / High / Medium / Low** against published industry data — not numbers we invented:
+
+- **Cycle time, time to first review, and PR size** tiers follow [LinearB's community benchmarks](https://linearb.helpdocs.io/article/d2v8kqzxzd-metrics-community-benchmarks), published from their 2026 dataset of 8.1M+ pull requests across 4,813 teams.
+- The [DORA dashboard](/metrics/dora) inside the product uses the canonical DORA State of DevOps thresholds.
+
+One methodological note, disclosed on purpose: the published tiers aggregate team values at the 75th percentile, while the benchmark bands your repo's **median** — a slightly generous comparison for repos with occasional very slow PRs. Bands are directional reference points, not a verdict.
+
+## Sharing a scorecard
+
+Every result has a shareable link that unfurls as a scorecard card in Slack, LinkedIn, or X — paste `devperform.io/api/public/benchmark/share/<owner>/<repo>` anywhere links unfurl.
+
+## Privacy
+
+The benchmark reads public PR metadata via the GitHub API. Leaving an email is optional — it gets you a one-time copy of your report, not a mailing list.
