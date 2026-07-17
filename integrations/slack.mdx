@@ -49,7 +49,13 @@ Three things to know:
 
 - **Self-only, always.** Notifications go to the person the PR belongs to — never to a manager, never to a channel, never aggregated. There is no admin view of anyone's notification activity.
 - **Off by default.** Nobody gets DMs until they turn them on themselves, and there's a **Send test DM** button to confirm delivery.
-- **Near-real-time on GitHub** (driven by code-host webhooks). DMs find you by email, so your DevPerform email must match your Slack account's email.
+- **Delivery timing depends on your code host** (see below). DMs find you by email, so your DevPerform email must match your Slack account's email.
+
+### GitHub and GitLab
+
+- **GitHub** — near-real-time, driven by webhooks: DMs arrive within moments of the event.
+- **GitLab** — delivered when DevPerform next syncs your projects (on the regular sync cadence rather than instantly), so notifications are near-real-time rather than immediate. GitLab covers **PR approved**, **PR merged**, and **CI passed / failed**; **Review requested** and **Changes requested** aren't available from GitLab's API and so aren't sent for GitLab merge requests.
+- **Bitbucket** — personal notifications aren't available yet.
 
 Requires a connected Slack workspace on a plan that includes Slack features.
 
