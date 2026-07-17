@@ -11,7 +11,7 @@ As teams adopt coding agents (Claude Code, Cursor, Copilot, and others), the imp
 
 ## How authorship is detected
 
-DevPerform reads commit metadata (trailers and authoring identities) to attribute work to a tool — **Claude Code, Cursor, GitHub Copilot, Devin, Aider, or OpenAI Codex** — and classifies each PR three ways:
+DevPerform reads commit metadata — message trailers ("Co-authored-by", "Generated with" lines) plus the git author identity that cloud agents commit under — to attribute work to a tool: **Claude Code, Cursor, GitHub Copilot (coding agent, VS Code, CLI), Devin, Aider, OpenAI Codex, Windsurf, Google Jules, Gemini Code Assist, OpenHands, Amp, Amazon Q, Kiro, JetBrains Junie, Replit Agent, Factory Droid, and Ona**. Each PR is then classified three ways:
 
 | Class | Meaning |
 |-------|---------|
@@ -60,7 +60,7 @@ Both views measure adoption from AI-attributed commits (a lower bound) and carry
 
 ## AI Tools comparison
 
-The **AI Tools** page (Pro) compares detected AI tools side by side: attributed PRs, commits and lines, revert and unreviewed-merge rates per tool, and a weekly adoption chart. Enter each tool's monthly spend (kept in your browser — never stored server-side) to get **cost per AI-assisted PR by tool** and a spend-share vs work-share comparison. Detection is commit-trailer based — a lower bound, and coverage varies by tool; the page says so.
+The **AI Tools** page (Pro) compares detected AI tools side by side: attributed PRs, commits and lines, revert and unreviewed-merge rates per tool, and a weekly adoption chart. Enter each tool's monthly spend (kept in your browser — never stored server-side) to get **cost per AI-assisted PR by tool** and a spend-share vs work-share comparison. Detection is commit-signature based — message trailers plus the git author identity that cloud agents commit under — a lower bound whose coverage varies by tool; the page says so.
 
 It also shows **seat utilization**: how many people actively used each tool in the period — as a **count only, never a list of names** — and, if you enter how many seats you pay for (also browser-only), the idle-seat count and the spend tied up in them. "You pay for 20 Copilot seats and 8 were active this month" is often the fastest AI-cost win there is.
 
