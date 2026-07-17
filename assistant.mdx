@@ -1,0 +1,22 @@
+---
+title: AI Assistant
+description: Ask plain-English questions about your product setup — and about your own delivery data.
+---
+
+<Note>
+  The assistant is part of the **Growth** plan and above. See [Plans](/plans).
+</Note>
+
+The in-app assistant (bottom-right of every app page) answers two kinds of questions:
+
+- **Product questions** — "how do I connect GitLab?", "what does pickup time mean?" — answered from this documentation.
+- **Your data** — "How did cycle time trend this month?", "What's our investment mix this quarter?", "Which team has the slowest review pickup?" — answered from your account's live metrics, the same numbers the dashboards show.
+
+## Answers you can check
+
+Every data answer ends with a **link to the dashboard that shows those numbers**, so you can verify rather than trust. The assistant reads through the exact same account-scoped metric services as the dashboards — there is no separate compute path to drift.
+
+## What it won't do — by design
+
+- **Rank individuals.** Ask "who's my slowest engineer?" and it will decline and offer the team-health views instead — activity counts aren't a measure of individual performance, and the whole product is built team-level.
+- **Peek behind anonymity.** Survey questions honour the same anonymity thresholds as the survey dashboards; below the threshold it tells you results are hidden and why.
