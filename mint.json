@@ -54,7 +54,8 @@
         "dashboard/trends",
         "dashboard/engineer-view",
         "dashboard/executive",
-        "dashboard/filters"
+        "dashboard/filters",
+        "assistant"
       ]
     },
     {
@@ -85,7 +86,8 @@
       "group": "Administration",
       "pages": [
         "admin/setup",
-        "admin/import-members"
+        "admin/import-members",
+        "api-data-export"
       ]
     },
     {

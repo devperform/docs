@@ -1,0 +1,43 @@
+---
+title: CSV & API Data Export
+description: Pull your metric data into a BI warehouse with account-scoped API tokens.
+---
+
+<Note>
+  Data export is part of the **Pro** plan. See [Plans](/plans).
+</Note>
+
+Export the metric data behind your dashboards as **CSV or JSON** — for a BI warehouse, a spreadsheet, or your own analysis.
+
+## Create a token
+
+1. Go to **Admin → Settings → API & Exports**.
+2. **Create token**, give it a name (e.g. "warehouse-sync").
+3. Copy the `dpx_…` token — it is shown **once**. DevPerform stores only a hash.
+4. Revoke any token from the same card; revoked tokens stop working immediately.
+
+## Authenticate and pull
+
+```bash
+curl -H "Authorization: Bearer dpx_YOUR_TOKEN" \
+  "https://devperform.io/api/export/v1/pull_requests.csv?from=2026-04-01&to=2026-07-01"
+```
+
+## Datasets
+
+| File | What's in it |
+|------|--------------|
+| `pull_requests.csv` | Merged/closed PRs: repo, author, timestamps, sizes, review counts, cycle hours, AI attribution, investment category |
+| `commits.csv` | Commit metadata: SHA, PR, timestamps, sizes, AI attribution |
+| `deployments.csv` | Deployments as ingested |
+| `incidents.csv` | Incidents as ingested |
+| `teams.csv` | Team rollups — engineer **counts**, not member lists |
+| `metrics_weekly.csv` | Weekly per-team trend aggregates (cycle time, throughput, review health) |
+
+**Parameters:** `from` / `to` (ISO dates, default last 90 days) · `format=json` for JSON instead of CSV.
+
+**Rate limit:** 60 requests per hour per token. Unknown or revoked tokens get `401`; throttled requests get `429`.
+
+## What's deliberately not exportable
+
+The export mirrors what's already visible in the app and in your git history. Per-engineer PR and commit rows are included (that's public git metadata, shown in-app). **Never exportable:** survey answers, per-person survey data, or derived per-person scores — the same team-level design the whole product follows.
