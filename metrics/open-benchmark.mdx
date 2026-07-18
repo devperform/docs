@@ -1,0 +1,39 @@
+---
+title: The Open Benchmark
+description: Live industry percentile benchmarks computed daily from ~200 curated public open-source repositories.
+---
+
+The **Open Benchmark** publishes live industry percentiles for the core delivery metrics — computed daily from a curated set of public open-source repositories, and served openly so anyone can see how the wider open-source world ships software. It's the population-level companion to the [free single-repo benchmark](/metrics/benchmark): one gives you the industry distribution, the other scores a repo you paste in.
+
+## What it measures
+
+Percentiles are published for four delivery metrics:
+
+| Metric | What it is |
+|---|---|
+| **Cycle time** | Median hours from PR opened to merged |
+| **Time to first review** | Median hours from PR opened to the first non-author review or comment |
+| **PR size** | Median lines changed per merged PR |
+| **Merge frequency** | Merged PRs per week |
+
+## Where the numbers come from
+
+- **~200 curated public repositories.** The panel is a hand-picked set of active, well-known open-source projects — each one **API-verified** as a real, public repository before it counts toward the distribution.
+- **Refreshed daily.** DevPerform recomputes the panel's metrics every day, so the published percentiles track the current state of the set rather than a one-time snapshot.
+- **Public metadata only.** The benchmark reads public pull-request metadata via the host API — no source code, and **no personal data** of any kind. It's repository-level metadata, nothing tied to an individual.
+
+The percentiles are available from the public app endpoint:
+
+```
+GET /api/public/benchmark/industry
+```
+
+## How to read it honestly
+
+The panel is built from **public open-source repositories, and those skew differently from a private team's repos.** Open-source work tends toward larger contributor pools, asynchronous review across time zones, and drive-by contributions — all of which pull cycle time, review latency, and PR size in directions that a co-located product team wouldn't see. Treat the Open Benchmark as a **directional reference for the open-source population**, not a target line for your team.
+
+For a comparison that actually reflects *your* code, run your own repository through the [free benchmark](https://devperform.io/benchmark) at **devperform.io/benchmark** — it scores a single repo against published industry bands in seconds, no signup required.
+
+<Note>
+The Open Benchmark reflects public open-source repositories, which ship differently than private team repos. Use it to understand the open-source distribution; use the [free benchmark](https://devperform.io/benchmark) to see where a specific repo lands.
+</Note>

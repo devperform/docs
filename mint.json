@@ -44,7 +44,8 @@
         "metrics/ai-metrics",
         "metrics/ai-roi",
         "metrics/investment",
-        "metrics/benchmark"
+        "metrics/benchmark",
+        "metrics/open-benchmark"
       ]
     },
     {
