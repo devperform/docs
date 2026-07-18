@@ -54,7 +54,7 @@ Three things to know:
 ### GitHub and GitLab
 
 - **GitHub** — near-real-time, driven by webhooks: DMs arrive within moments of the event.
-- **GitLab** — delivered when DevPerform next syncs your projects (on the regular sync cadence rather than instantly), so notifications are near-real-time rather than immediate. GitLab covers **PR approved**, **PR merged**, and **CI passed / failed**; **Review requested** and **Changes requested** aren't available from GitLab's API and so aren't sent for GitLab merge requests.
+- **GitLab** — GitLab connections are OAuth-based with no webhook path, so DevPerform spots your events at **sync time**: DMs go out when DevPerform next syncs your projects (on the regular sync cadence) rather than instantly, making them near-real-time rather than immediate. Because events are detected by comparing each sync rather than receiving a one-shot webhook, a **shared dedup ledger** records what's already been sent — so a re-sync never DMs you twice about the same event. GitLab covers **PR approved**, **PR merged**, and **CI passed / failed**; **Review requested** and **Changes requested** aren't available from GitLab's OAuth API and so aren't sent for GitLab merge requests.
 - **Bitbucket** — personal notifications aren't available yet.
 
 Requires a connected Slack workspace on a plan that includes Slack features.
