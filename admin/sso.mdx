@@ -1,0 +1,61 @@
+---
+title: "Single sign-on (SSO)"
+description: "Let your team sign in through Okta, Microsoft Entra, Google Workspace, or any SAML 2.0 identity provider"
+---
+
+DevPerform supports corporate single sign-on for teams that manage access
+through an identity provider. Two options, usable together:
+
+- **OIDC** — Okta, Microsoft Entra ID, Google Workspace, OneLogin, JumpCloud,
+  or any OpenID Connect provider.
+- **SAML 2.0** — for identity providers that require SAML.
+
+Only the **account owner** can configure SSO, under **Admin → Settings →
+Single sign-on**.
+
+## Set up an OIDC provider (Okta, Entra, Google Workspace)
+
+1. In your IdP, create a **Web** application with the redirect URI shown in
+   DevPerform's SSO settings (`https://devperform.io/api/auth/oidc/callback`).
+2. In DevPerform, choose **Add identity provider → OIDC** and enter:
+   - **Issuer URL** — e.g. `https://yourcompany.okta.com`, or for Entra
+     `https://login.microsoftonline.com/<tenant-id>/v2.0`
+   - **Client ID** and **Client secret** from the app you created
+   - **Email domains** — the company domains your people sign in with
+3. Save. DevPerform validates the issuer immediately, so a typo fails at setup
+   time — not at your team's first login.
+
+## Set up a SAML provider
+
+1. In DevPerform, choose **Add identity provider → SAML 2.0** and enter your
+   IdP's **Entity ID**, **SSO URL**, and **signing certificate** (PEM).
+2. Configure your IdP with the values DevPerform shows on the provider card:
+   **SP Entity ID**, **ACS URL**, and the **SP metadata URL** (importable).
+3. Have the IdP send the user's email as the **NameID** (email format).
+
+## How your team signs in
+
+On the sign-in page, choose **Sign in with company SSO** and enter a work
+email. The email's domain routes to your identity provider; after
+authenticating there, the user lands in DevPerform.
+
+## Auto-join (JIT provisioning)
+
+With **auto-join** enabled on a provider, the first sign-in from a verified
+email on one of your domains joins your account automatically as a **member**
+— no invitation needed. Role changes (admin, owner) stay explicit in
+**Admin → Members**.
+
+## Require SSO
+
+The account owner can require SSO for members: sign-ins via GitHub, GitLab,
+or Bitbucket are then refused for members of your account and pointed at the
+SSO flow. The owner is always exempt, so a misconfigured provider can never
+lock the account.
+
+## Notes
+
+- Each email domain can be claimed by only one SSO configuration.
+- Shared mail domains (gmail.com and similar) can't be used as SSO domains.
+- Removing a provider doesn't delete the users who signed in through it —
+  they keep their accounts and can use another sign-in method.
