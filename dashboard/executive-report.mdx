@@ -28,7 +28,7 @@ The link is shown **once**. Copy it before closing the dialog — for security D
 The report is computed **live** each time it's opened, over a trailing 90-day window (trend series cover the matching 13 weeks):
 
 - **Delivery (DORA)** — deployment frequency, lead time, change failure rate, and time to restore, each with an Elite / High / Medium / Low band.
-- **Cycle time by phase** — median hours in coding, pickup, and review.
+- **Cycle time by phase** — median time from first commit to PR open, in pickup, and in review. (The first stage is labeled exactly what it measures — in commit-then-open workflows, AI agents especially, the observable gap between first commit and PR open is small, and that's real, not a bug.)
 - **Delivery trend** — PRs merged and cycle time, week by week.
 - **Review health** — merged PR volume, time to first review, and the share of PRs merged without review.
 - **Investment mix** *(Growth and Pro)* — how effort splits across features, maintenance, and keep-the-lights-on.
