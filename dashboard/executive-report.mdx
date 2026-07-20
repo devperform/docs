@@ -16,7 +16,8 @@ Creating a report link is available on **every plan, including Free**. The secti
 1. Open the **Executive Summary** dashboard.
 2. Click **Share exec report** (visible to account owners and admins).
 3. Choose how long the link stays valid — **7, 30, or 90 days** — and add an optional label (e.g. "For our CTO" or "Q3 board deck").
-4. Click **Create link**, then **Copy**.
+4. Optionally enter your **engineering cost for the report window** to add a capitalizable-vs-expensed dollar split (see below). It prefills from the value you've entered on Investment & Cost.
+5. Click **Create link**, then **Copy**.
 
 <Warning>
 The link is shown **once**. Copy it before closing the dialog — for security DevPerform never stores the link itself and can't show it again. If you lose it, just create a new one.
@@ -31,7 +32,12 @@ The report is computed **live** each time it's opened, over a trailing 90-day wi
 - **Delivery trend** — PRs merged and cycle time, week by week.
 - **Review health** — merged PR volume, time to first review, and the share of PRs merged without review.
 - **Investment mix** *(Growth and Pro)* — how effort splits across features, maintenance, and keep-the-lights-on.
+- **Engineering cost** *(Growth and Pro)* — the capitalizable-vs-expensed effort split (the ASC 350-40 view finance teams use). Shown as percentages by default; if you entered a cost basis when creating the link, the reader also sees the dollar split.
 - **AI-assisted work** *(Pro)* — the share of merged PRs with AI-authored commits.
+
+<Note>
+**Your cost basis never reaches our servers.** Like everywhere else in DevPerform, compensation figures stay in your browser: the basis you enter travels only **inside the link itself** (in the part of the URL browsers never send to servers), and the reader's browser does the dollar math locally. Anyone holding the link can see the amount, so share it accordingly.
+</Note>
 
 <Note>
 **The report only ever shows team and organization-level aggregates.** It never includes individual engineer names, per-person metrics, or any survey answers — it's a health view, not a ranking. This is the same data-honesty boundary the rest of DevPerform holds to.
