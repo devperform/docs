@@ -1,0 +1,42 @@
+---
+title: Share an executive report
+description: Send leadership a private, read-only summary of your delivery metrics — no login required for the reader.
+---
+
+The **executive report** is a private, read-only web page that summarizes your team's delivery health — DORA metrics, cycle time, delivery trends, and review health — that you can share with an exec, a board member, or any stakeholder **without giving them a login**.
+
+You generate a link, choose when it expires, and send it up the chain. Whoever opens it sees a clean, at-a-glance summary.
+
+<Note>
+Creating a report link is available on **every plan, including Free**. The sections inside the report follow your plan — a Free report shows the core delivery metrics; the investment-mix headline needs **Growth**, and the AI-impact headline needs **Pro**.
+</Note>
+
+## Create a report link
+
+1. Open the **Executive Summary** dashboard.
+2. Click **Share exec report** (visible to account owners and admins).
+3. Choose how long the link stays valid — **7, 30, or 90 days** — and add an optional label (e.g. "For our CTO" or "Q3 board deck").
+4. Click **Create link**, then **Copy**.
+
+<Warning>
+The link is shown **once**. Copy it before closing the dialog — for security DevPerform never stores the link itself and can't show it again. If you lose it, just create a new one.
+</Warning>
+
+## What the report shows
+
+The report is computed **live** each time it's opened, over a trailing 90-day window (trend series cover the matching 13 weeks):
+
+- **Delivery (DORA)** — deployment frequency, lead time, change failure rate, and time to restore, each with an Elite / High / Medium / Low band.
+- **Cycle time by phase** — median hours in coding, pickup, and review.
+- **Delivery trend** — PRs merged and cycle time, week by week.
+- **Review health** — merged PR volume, time to first review, and the share of PRs merged without review.
+- **Investment mix** *(Growth and Pro)* — how effort splits across features, maintenance, and keep-the-lights-on.
+- **AI-assisted work** *(Pro)* — the share of merged PRs with AI-authored commits.
+
+<Note>
+**The report only ever shows team and organization-level aggregates.** It never includes individual engineer names, per-person metrics, or any survey answers — it's a health view, not a ranking. This is the same data-honesty boundary the rest of DevPerform holds to.
+</Note>
+
+## Manage and revoke links
+
+Reopen the **Share exec report** dialog to see your active links — each with its label, expiry, and view count — and **revoke** any of them instantly. Links also stop working automatically at their expiry date. A reader who opens an expired or revoked link sees a friendly "this report link has expired" page, never an error.
