@@ -47,3 +47,7 @@ Per-person **survey DMs** over Teams are on the roadmap (they require a Teams bo
 ## Managing the connection
 
 Everything lives under **Admin → Connections → Microsoft Teams**: send a test, send the digest immediately, toggle the weekly schedule, or **Disconnect**. Only account admins can manage it. To change channels, create a new webhook and reconnect.
+
+### If posts stop arriving
+
+Teams webhooks can be deleted or rotated on the Teams side (for example when the Workflows flow is removed or the channel is archived). When that happens, DevPerform detects the failing webhook and the Connections card shows an amber **"Teams webhook is failing"** state with a field to paste a fresh webhook URL — create a new webhook (step 1 above) and reconnect. Digests, nudges, and alerts resume immediately.
