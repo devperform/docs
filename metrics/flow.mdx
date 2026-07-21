@@ -11,7 +11,7 @@ Cycle time is split into four stages so you can see which part of the pipeline i
 
 | Stage | From → to |
 |-------|-----------|
-| **Coding** | First commit → PR opened |
+| **First commit → open** | First commit → PR opened. Labeled for exactly what git observes: in commit-then-open workflows (AI agents especially) this gap is seconds — that's real, not missing data |
 | **Pickup** | PR opened → first review (or merge, if never reviewed) |
 | **Review** | First review → merged |
 | **Deploy** | Merged → deployed *(actions mode only)* |
@@ -19,7 +19,7 @@ Cycle time is split into four stages so you can see which part of the pipeline i
 Shown as a stacked bar at the **team** level and on each engineer's own detail page as a **self-view**. A long pickup stage points to reviewers not getting to work; a long review stage points to back-and-forth on changes.
 
 <Note>
-  Coding time relies on first-commit data, which fills in as PRs are re-synced — newly tracked repos populate it gradually.
+  The first-commit stage relies on first-commit data, which fills in as PRs are re-synced — newly tracked repos populate it gradually.
 </Note>
 
 ### Industry reference bands
