@@ -100,6 +100,8 @@
     }
   ],
   "footerSocials": {
-    "github": "https://github.com/devperform"
+    "github": "https://github.com/devperform",
+    "linkedin": "https://www.linkedin.com/company/devperform/",
+    "website": "https://devperform.io"
   }
 }
